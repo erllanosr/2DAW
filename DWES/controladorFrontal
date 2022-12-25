@@ -1,0 +1,6 @@
+El controlador FRONTAL
+Carga un index.php
+-> Lleva a un controlador por defecto
+-> Carga librerías de Twig
+
+

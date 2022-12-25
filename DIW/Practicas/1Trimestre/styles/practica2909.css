@@ -1,0 +1,35 @@
+h1 {
+  color: orange;
+}
+.mark1, .parrafo1 {
+  color: red;
+}
+.parrafo1:hover{
+  color: black;
+}
+.parrafo2:hover{
+  color: red;
+}
+.mark2 {
+  background-color: black;
+  color: yellow;
+}
+
+a {
+  background-color: orange;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: orange;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: green;
+}

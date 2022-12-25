@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MENÚ RESPONSIVE</title>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0; /*OPCIONAL*/
+    }
+    nav {
+      background-color: cadetblue;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    a {
+      text-decoration: none;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    #check, .label {
+      display: none;
+    }
+    li {
+      padding: 20px;
+    }
+
+    /*DESAPARECER EL MENU EN MÓVILES*/
+    @media (max-width: 769px) {
+      label {
+        display: block;
+        cursor: pointer;
+      }
+      
+      nav ul {
+        display: block;
+        position: fixed;
+        left: -150%;
+        right: 0;
+        top: 80px;
+        justify-items: center;
+        height: 100%;
+
+      }
+      #check:checked ~ .menu_nav ul {
+        left: 0;
+        align-items: center;
+        transform: all .25s;
+
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="menucontenedor">
+    <div class="logo"><h1>LOGOTIPO</h1></div>
+    <div class="menu_nav">
+      <label class="label" for="checkbox"><img src="icons8-menú-redondeado-30.png" alt=""></label>
+      <input type="checkbox" id="check">
+      <ul class="navegacion">
+        <li><a href="#">Principal</a></li>
+        <li><a href="#">Tienda</a></li>
+        <li><a href="#">Contactos</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>

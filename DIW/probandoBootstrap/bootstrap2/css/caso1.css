@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 80% 20%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "header header header "
+    "main main main"
+    "footer footer aside";
+  text-align: center;
+}
+
+/*HEADER*/
+.header {
+  background: orangered;
+  grid-area: header;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #282a36;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  display: flex;
+  padding: 40px;
+}
+
+ul li {
+  padding-right: 40px;
+  list-style: none;
+}
+
+.logo {
+  color: #fff;
+  font-size: 40px;
+  padding-left: 40px;
+}
+
+/*HEADER*/
+
+/*MAIN*/
+.main {
+  grid-area: main;
+  text-align: center;
+}
+
+.iz_arriba {
+  /*ZAPATILLAS*/
+  float: left;
+  width: 35%;
+  background-color: black;
+  height: 350px;
+  display: flexbox;
+}
+#img_aguila {
+  height: 350px;
+  width: 100%;
+}
+
+.iz_abajo {
+  /*RELOJES*/
+  background-color: #fff;
+  float: left;
+  width: 35%;
+  height: 350px;
+  display: flexbox;
+}
+
+.de_arriba {
+  /*CAMISETAS*/
+  background-color: lightgray;
+  float: left;
+  width: 35%;
+  height: 350px;
+  display: flexbox;
+}
+
+.de_abajo {
+  /*CALCETINES*/
+  background-color: orangered;
+  float: left;
+  width: 35%;
+  height: 350px;
+  display: flexbox;
+}
+
+.contacto {
+  grid-area: main;
+  padding-top: 0;
+  background-color: #fff;
+  width: 30%;
+  height: 860px;
+  float: right;
+}
+
+/*MAIN*/
+.footer {
+  display: flex;
+  grid-area: footer;
+  background-color: lightgray;
+  height: 160px;
+  width: 70%;
+}

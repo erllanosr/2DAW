@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXAMEN 07|10</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!--1. Si tiene contenido, 2. si tiene justo 8 números, 3. cuántos dígitos hay¿?-->
+    <h1>Validar</h1>
+    <input type="text" id="texto1" />
+    <br />
+    <p id="resultado1"></p>
+    <br />
+    <input type="text" id="texto2" />
+    <br />
+    <p id="resultado2"></p>
+    <br />
+    <input type="text" id="texto3" />
+    <br />
+    <p id="resultado3"></p>
+    <br />
+    <button type="submit" id="boton_enviar">Enviar</button>
+
+    <script>
+      var dato1 = document.getElementById("texto1").value;
+      var dato2 = document.getElementById("texto2").value;
+      var dato3 = document.getElementById("texto3").value;
+      var boton = document.getElementById("boton_enviar");
+      var resul1 = document.getElementById("resultado1");
+      var resul2 = document.getElementById("resultado2");
+      var resul3 = document.getElementById("resultado3");
+
+      console.info(dato1);
+      console.info(dato2);
+      console.info(dato3);
+
+      //TIENE CONTENIDO
+      boton.addEventListener("click", function () {
+        tieneContenido(dato1);
+        function tieneContenido(dato1) {
+          if (dato1.length >= 1) {
+            resul1.innerHTML = "TIENE CONTENIDO";
+          } else {
+            resul1.innerHTML = "NO TIENE CONTENIDO";
+          }
+        }
+      });
+      //tieneContenido();
+
+      // TIENE 8
+      boton.addEventListener("click", function () {
+        tieneOcho(dato2);
+        function tieneOcho(dato1) {
+          if (dato2.length < 7) {
+            resul2.innerHTML = "TIENE MENOS DE 8 CARACTERES";
+          } else {
+            resul2.innerHTML = "TIENE MÁS DE 8 CARACTERES";
+          }
+        }
+      });
+
+      // ¿Cuántos dígitos tiene el input?
+      boton.addEventListener("click", function () {
+        tieneDigitos(dato3);
+        function tieneDigitos(dato3) {
+          if (dato3.length > 1) {
+            resul3.innerText = dato3.length;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

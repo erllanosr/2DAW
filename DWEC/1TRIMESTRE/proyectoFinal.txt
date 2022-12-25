@@ -1,0 +1,27 @@
+PROYECTO FINAL - JS
+Pregunta
+-OPCION 1
+-OPCION 2
+-OPCION 3
+
+REQUISITOS:
+PUNTÚA MÁXIMO 5/10
+-10 PREGUNTAS
+-Salen preguntas al azar
+-Opciones aparecen al azar
+-Solo una opción correcta
+MÁXIMO 7/10
+- Preguntas de 1 en 1
+MÁXIMO 8/10
+- Mostrar correctas
+-Mostrar incorrectas
+MÁXIMO 10/10
+- Se puede retroceder y avanzar dentro de las preguntas a través de AJAX.
+
+ESTRUCTURA DE DATOS
+Una vista con las preguntas y opciones
+Controlador donde se controlarán las preguntas
+MODELO: Preguntas y Respuestas
+ARRAYS
+
+

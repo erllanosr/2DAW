@@ -1,0 +1,304 @@
+<!-- 3.- Para la maquetación web puedes usar tanto las divisiones aprendidas con el grid en CSS comoel grid de BootStrap.4.-
+En algunas de estas páginas deben de presentarse al menos uno de estos elementos:- Un menú de navegación.- Un mensaje
+oculto junto a un spinner.- Un slider o carousel.- Un modal.- Un formulario donde puedes buscar en el manual de
+BootStrap y observar que existenvalidadores para el mismo (por supuesto, sube nota). -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <title>INDEX PUBLIC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+  </head>
+  <style>
+    #navBar {
+      height: 125px;
+    }
+    .progress-bar{
+      background-color: #ccc;
+      height: 5px;
+      width: 0%;
+    }
+  </style>
+  <body>
+    <header>
+      <!-- EMPIEZA EL HEADER -->
+      <nav id="navBar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand text-white" href="#"><i class="bi bi-watch">TIME ZONE</i></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Tienda</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Páginas
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" data-bs-target="#canvasLogin" data-bs-toggle="offcanvas" href="login.html"
+                    >Inicia Sesión</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" data-bs-target="#canvasSignUp" data-bs-toggle="offcanvas" href="#">
+                    Regístrate</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+          </form>
+          <div class="text-end">
+            <a href="login.html" class="text-white"> <i class="bi bi-person-fill"></i> Inicia Sesión </a>
+            <!-- TERMINA BOTÓN OFFCANVAS -->
+            <button type="button" class="btn btn-outline-dark text-white">
+              <i class="bi bi-people-fill"></i> Regístrate
+            </button>
+          </div>
+        </div>
+      </nav>
+      <div class="progress-container">
+        <div class="progress-bar fixed-top" id="myBar"></div>
+      </div>
+    </header>
+    <main>
+      <!-- EMPIEZA EL CARRUSEL -->
+      <div id="miCarrusel" class="carousel carousel-dark slide" data-bs-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container col-xxl-8 px-4 py-5">
+              <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                  <img src="../img/omega1948.png" class="img-fluid" width="700" height="500" loading="lazy" />
+                </div>
+                <div class="col-lg-6">
+                  <h1 class="display-5 fw-bold lh-1 mb-3">
+                    Seamaster 1948 Co‑Axial Master Chronometer Small Seconds 38 mm
+                  </h1>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-dark">COMPRAR AHORA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container col-xxl-8 px-4 py-5">
+              <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                  <img
+                    src="../img/constellation_globemaster.png"
+                    class="img-fluid"
+                    width="700"
+                    height="500"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-lg-6">
+                  <h1 class="display-5 fw-bold lh-1 mb-3">Globemaster Co‑Axial Master Chronometer 39mm</h1>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-dark">COMPRAR AHORA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container col-xxl-8 px-4 py-5">
+              <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                  <img
+                    src="../img/constellation_globemaster2.png"
+                    class="img-fluid"
+                    width="700"
+                    height="500"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-lg-6">
+                  <h1 class="display-5 fw-bold lh-1 mb-3">
+                    Globemaster Co‑Axial Master Chronometer Annual Calendar 41 mm
+                  </h1>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button type="button" class="btn btn-dark">COMPRAR AHORA</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden-focusable">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <hr />
+      <!-- TERMINA EL CARRUSEL -->
+      <div class="container text-center">
+        <div class="row pt-3 pt-5 pb-5">
+          <div class="col">
+            <h3><i class="bi bi-truck"></i></h3>
+            <p><strong>ENVÍO GRATIS A PARTIR DE 100€</strong></p>
+          </div>
+          <div class="col">
+            <h3><i class="bi bi-headset"></i></h3>
+            <p><strong>ASISTENCIA LAS 24HS</strong></p>
+          </div>
+          <div class="col">
+            <h3><i class="bi bi-arrow-repeat"></i></h3>
+            <p><strong>DEVOLUCIONES GRATUITAS</strong></p>
+          </div>
+        </div>
+      </div>
+      <!-- SEPARADORES -->
+      <hr />
+      <div class="container marketing">
+        <!-- START THE FEATURETTES -->
+        <div class="row featurette pt-5 pb-5">
+          <div class="col-md-7">
+            <br /><br /><br /><br /><br /><br />
+            <h1 class="featurette-heading fw-normal lh-1">
+              Royal Oak Tourbillon Volante Automático <br>
+            </h1>
+            <span class="text-muted">Ref. 26730BC.ZZ.1320BC.01</span>
+            <br>
+            <p class="lead pt-3">
+            El bisel engastado con diamantes de talla baguette enriquece la estética monocromática de este Royal Oak Tourbillon
+            Volante Automático de 41 mm de oro blanco de 18 quilates.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img src="../img/apiguet.png" class="w-75" alt="" />
+          </div>
+        </div>
+        <hr class="featurette-divider" />
+        <div class="row featurette pb-5">
+          <div class="col-md-7 order-md-2">
+            <br /><br /><br /><br /><br /><br />
+            <h1 class="featurette-heading fw-normal lh-1">
+              Globemaster Co‑Axial Master Chronometer Annual Calendar 41 mm
+            </h1>
+            <span class="text-muted">Ref. 130.93.41.22.99.002</span>
+            <p class="lead pt-3">
+              Este modelo de 41 mm está limitado a solo 52 ejemplares. La caja de platino 950 luce un bisel acanalado y pulido. El
+              fondo de caja incluye el medallón del Observatorio, en oro blanco de 18 qt y esmalte de color verde.
+            </p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img src="../img/constellation_globemaster.png" class="w-75" alt="" />
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette pb-5">
+          <div class="col-md-7">
+            <br /><br /><br /><br /><br /><br />
+            <h1 class="featurette-heading fw-normal lh-1">
+              Globemaster Co‑Axial Master Chronometer 39 mm 
+            </h1>
+            <span class="text-muted">Ref. 130.93.39.21.99.001</span>
+            <p class="lead pt-3">
+            La caja, en platino 950, incluye un bisel estriado del mismo material que se utilizó en la esfera "Pie Pan" tratada con
+            chorro de arena e inspirada en el primer modelo Constellation de 1952.
+            </p>
+          </div>
+          <div class="col-md-5 pb-5">
+            <img src="../img/constellation_globemaster2.png" class="w-75" alt="" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="container-fluid bg-dark text-white">
+      <footer class="py-5 bg">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>De tu interés</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Tienda</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Novedades</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Contacto</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Sobre Nosotros</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contacto</a></li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <!-- <h5>Section</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+              </ul> -->
+          </div>
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Suscríbete a nuestra newsletter</h5>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Correo</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Correo" />
+                <button class="btn btn-outline-light" type="button">Suscribirme</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <p class="pt-5">&copy; 2022 proyectoPHP | 2ºDAW | ERICK LLANOS | TODOS LOS DERECHOS RESERVADOS</p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function () {
+        myFunction();
+      };
+      function myFunction() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+USUARIOS
+index --> Tabla con todos los usuarios
+create --> vista para agregar nuevoUsuario
+edit --> Vista para actualizar usuario
+---
+Dspués de un CREATE y un EDIT, tiene que redirigir al index.
+doGet index, recibir de UDAO y recibir todos all() los datos.
+
+Del index.jsp que está fuera de la carpeta usuarios, tiene que tener un botón que redirija al index dentro de la carpeta usuarios.
+
+Controlador, action va al index.jsp

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+      /*
+                                                                        $(this).hide() - hides the current element.
+                                                                        $("p").hide() - hides all <p> elements.
+                                                                        $(".test").hide() - hides all elements with class="test".
+                                                                        $("#test").hide() - hides the element with id="test".*/
+
+      $(document).ready(function () {
+        $("#oculta").click(function () {
+          $("#div2").hide();
+        });
+        $("#muestra").click(function () {
+          $("#div2").show();
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="div1" class="div">
+        <h2>hola mundo</h2>
+      </div>
+      <div id="div2" class="div2">
+        <form action="#">
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" />
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" /> Remember me</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br />
+        <br />
+      </div>
+      <button id="oculta" class="btn btn-primary">OCULTAR</button>
+      <button id="muestra" class="btn btn-secundary">MOSTRAR</button>
+    </div>
+  </body>
+</html>

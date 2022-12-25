@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO 2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #contenedor {
+        display: grid;
+        grid-template-columns: repeat(10, auto);
+        grid-template-rows: repeat(12, auto);
+        grid-gap: 20px;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 40px;
+        padding-left: 40px;
+      }
+      #header {
+        grid-column-start: 1;
+        grid-column-end: 10;
+        grid-row: span 2;
+        justify-content: space-between;
+        background-color: #50fa7b;
+        height: 100px;
+        display: flex;
+      }
+      #nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #282a36;
+      }
+
+      ul li a {
+        text-decoration: none;
+      }
+      ul li {
+        list-style: none;
+      }
+      #main {
+        background-color: blue;
+        grid-column-start: 1;
+        grid-column-end: 10;
+        grid-row: span 5;
+      }
+      #footer {
+        background-color: chartreuse;
+        grid-column-start: 1;
+        grid-column-end: 10;
+        grid-row-start: 10;
+        grid-row-end: 12;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="header">
+        <div class="logo">LOGO</div>
+        <div class="nav_bar">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">CONTACTO</a></li>
+            <li><a href="#">AYUDA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="main">
+        <div class="right">
+          <h2>CONTENIDO 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia soluta, nemo quo quibusdam sed velit quae
+            iste repudiandae asperiores perspiciatis assumenda ab cum unde perferendis molestiae eos animi ducimus
+            expedita illo dolores ea rem, recusandae laboriosam nihil. Culpa consectetur perspiciatis tempora repellat
+            ratione voluptas veniam dolorum earum animi? Adipisci assumenda deleniti nulla suscipit quibusdam dicta
+            atque vitae, accusantium rerum. Voluptates fuga cupiditate quam quas eveniet suscipit eius nulla
+            perspiciatis, neque asperiores ad repudiandae? Unde provident libero iste? Beatae odio, adipisci, officiis
+            repudiandae veniam debitis nesciunt eius eum dicta eaque obcaecati temporibus id itaque dolorem. Quod
+            adipisci quas labore optio aperiam asperiores corrupti numquam dicta illo dolor temporibus quibusdam, id
+            facilis! Nisi nostrum iusto aut nemo eius repellat et doloremque nobis ut sit quos quis recusandae officiis,
+            ex amet laboriosam modi voluptatibus? Eius velit incidunt quas assumenda commodi error tenetur voluptas
+            laudantium culpa, neque eaque, beatae facilis, porro nihil ipsa. Ad, sed. Debitis harum qui sint recusandae
+            nesciunt earum sit ex doloremque quis possimus hic repellendus illum aperiam maxime nobis, ad alias sunt id
+            ut itaque cumque error sequi eligendi autem. Distinctio minima optio odit iste assumenda quidem harum. Rem
+            dolores consectetur quas consequuntur quia impedit quod tempora! Voluptatem, illo repellendus.
+          </p>
+        </div>
+        <div class="left">
+          <h2>CONTENIDO 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vitae nulla voluptate eaque magnam earum
+            recusandae, doloribus sunt dolorum, repellendus asperiores! Doloremque beatae excepturi fugiat, ex inventore
+            et minima cumque vel molestias laudantium. Libero veniam sed, enim vitae quasi mollitia earum animi. Atque
+            placeat, cumque laborum consectetur distinctio ullam ex enim nisi repellat adipisci repudiandae, iste fugit
+            similique odio nulla ut aliquam ipsam saepe odit facere. Vel eligendi neque consectetur, ducimus,
+            voluptatibus et dolores laborum fugit esse necessitatibus possimus nulla. Repellat obcaecati animi totam
+            laudantium, perspiciatis blanditiis unde non facere, porro, sunt consectetur. Nostrum illo facere culpa at
+            itaque modi amet deserunt alias autem error excepturi repudiandae quibusdam mollitia dolorem eveniet tenetur
+            ab architecto, natus, veniam accusamus nemo doloremque harum eius praesentium. Iusto veritatis quis
+            recusandae itaque soluta dignissimos quam. Et cumque accusamus aut voluptatum facere nulla, sapiente dolore!
+            Id cum incidunt praesentium? Voluptatum commodi aperiam dignissimos in numquam! Eum qui at sint excepturi
+            quibusdam necessitatibus vitae dolore natus, odio ea corporis dolores esse iste laudantium porro quo
+            consequatur inventore dignissimos sit? Suscipit dignissimos fugit quod, assumenda sequi, quisquam
+            consequatur quia fugiat, sapiente repellendus deleniti ipsum commodi nam. Quo iste quis placeat praesentium
+            laboriosam, sunt corporis cupiditate excepturi! Tempora, iure.
+          </p>
+        </div>
+      </div>
+      <div id="footer">
+        <p>ERICK LLANOS</p>
+      </div>
+    </div>
+  </body>
+</html>

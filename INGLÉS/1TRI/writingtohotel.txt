@@ -1,0 +1,19 @@
+Se pide:
+- La lista de hoteles en cada país.
+- Las actividades extras que tiene cada hotel a parte del hospedaje, bodas, reuniones, spa,
+- Imágenes de los distintos hoteles, áreas recreativas, etc.
+- 
+----------------
+Dear Madam Rossi,
+I'm Max, the developer of Bookling.com and I am writing to request the details to develop the website.
+First of all, I need a list of hotels in each country with images and details of each room. The different rooms available in each Hotel, any extra activities that each hotel has apart from accommodation for example weddings, meetings, spa, etc.
+Here is a list of the things I need:
+-Location
+-Your rates
+-Your schedules, calendar
+-Your payment methods
+-Contacts
+-Geolocation
+-Offers
+Yours sinceresly,
+Max.

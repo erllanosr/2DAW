@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      border: 1px solid;
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      border: 1px solid;
+    }
+    #contenedor {
+      display: grid;
+      grid-template-columns: repeat(10, auto);
+      grid-template-rows: repeat(12, auto);
+    }
+
+    #header {
+      grid-column-start: 1;
+      grid-column-end: 10;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      text-align: center;
+    }
+
+    #contenido {
+      grid-column-start: 5;
+      grid-column-end: 6;    
+      grid-row-start: 3;
+      grid-row-end: 12;
+    }
+  </style>
+</head>
+<body>
+  <div id="contenedor">
+    <div id="header">
+      <h1>BIENVENIDO A TU BIBLIOTECA</h1>
+      <h3>Loggeate para gestionar tus películas</h3>
+    </div>
+    <div id="nav"></div>
+    <div id="contenido">
+      <form action="">
+        <label for="email"><strong>EMAIL</strong></label>
+        <input type="text" name="email" id="email" placeholder="ejemplo@ejemplo.com"> <br>
+        <label for="password"><strong>CONTRASEÑA</strong></label>
+        <input type="text" id="claveUno" placeholder="Contraseña" /> <br> <input type="submit" id="boton" value="ENVIAR">
+      </form>
+    </div>
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

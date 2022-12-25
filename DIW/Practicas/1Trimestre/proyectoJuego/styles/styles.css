@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+ /*border: 1px black solid;*/
+}
+/*div {
+  border: 1px black solid;
+}*/
+.topNav {
+  display: inline-block;
+  background-color: orange;
+  text-align: right;
+  width: 100%;
+  padding-top: 40px;
+}
+.logo {
+  height: 100px;
+  float: left;
+  padding: 30px;
+}
+.menuNav li a {
+  text-align: right;
+  list-style: none;
+  text-decoration: none;
+  font-size: x-large;
+  text-align: justify;
+}
+.menuNav li,
+.menuLista {
+  padding-top: 100px;
+  list-style: none;
+  display: inline;
+  font-size: x-large;
+  text-decoration: none;
+}
+.menuLista a {
+  text-decoration: none;
+}
+
+.menuLista {
+  float: left;
+  width: 25%;
+}
+
+.principal {
+  padding: 45px;
+  float: right;
+  width: 70%;
+  background-image: url(../images/bomberman_mapa.jpg);
+  height: 500px;
+}
+
+.footer {
+  background-color: orange;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  color: white;
+}
+.footer img {
+  height: 50px;
+}

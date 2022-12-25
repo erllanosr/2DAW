@@ -1,0 +1,9 @@
+SESIÓN
+Dos partes:
+Pública: index.jsp
+Privada: folder usuarios --> index.jsp, edit.jsp, create.jsp
+Todo el mundo puede acceder a la parte pública, pero para pasar a la privada hay que pasar por el login.jsp
+login.jsp --> email y password, previa validación.
+
+-¿Cómo identificar si hay un usuario en la sesión?
+

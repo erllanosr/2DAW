@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="text" name="" id="texto">
+	<script type="text/javascript">
+		texto.onkeypress = pulsacion; //Evento de pulsación. Uso "keypress" para que se pueda usar el comando de cortar en el campo (ctrl+x), ya que "keydown" bloquearía esa combinación de teclas.
+
+		//texto.onchange = sustitucion; //Descomentar si se quiere añadir el evento "change" para que elimine la letra si de alguna forma ha quedado escrita al salir del campo
+
+		texto.onpaste = pegar; //Evento de pegado en el campo, para poder eliminar la letra si pegan el texto desde fuera y éste contiene alguna x. https://developer.mozilla.org/en-US/docs/Web/API/Element/paste_event
+		
+			
+		function pulsacion(e){
+			//Cuando detecta la letra "x" sea minúscula o mayúscula, retorna false para bloquear la ejecución del evento y por tanto que no llegue a entrar la letra al campo de texto.
+			if(e.key === "x" || e.key === "X"){
+				return false;
+			}
+		}
+
+		function sustitucion(){
+			texto.value = texto.value.replaceAll("x",'').replaceAll("X",'');
+		}
+
+		function pegar(e){
+			//Se asigna al campo el valor leído del cortapapeles, al cual previamente se le han quitado todas las x minúsculas o mayúsculas.
+			texto.value = e.clipboardData.getData("text").replaceAll("x",'').replaceAll('X','');
+
+			//El evento blur saca el foco del campo, para que el valor que quede escrito se corresponda con el asignado en la línea anterior, ya que si no se queda el texto pegado sin procesar.
+			texto.blur();
+		}
+	</script>
+</body>
+</html>

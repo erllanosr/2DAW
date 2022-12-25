@@ -1,0 +1,10 @@
+
+PASO SEGURO
+El año pasado un amigo nuestro viajó a Colombia para celebrar su aniversario de bodas y le asesinaron por resistirse a un robo.
+Por eso, hemos creado esta Web, que te ayudará a saber por dónde moverte, a qué sitios ir, qué visitar sin tener que preocuparte de que te pase algo en tu próximo destino.
+Usted puede contribuir a que estos hechos no vuelvan a pasar. Con su ayuda, podremos sacar adelante este proyecto ayudando a más personas alrededor del mundo.
+- Es una página donde se podrá ver y consultar: calles, lugares, sitios seguros de un país para que los turistas o cualquier persona que quiera viajar pueda hacerlo de manera segura gracias a la guía. Está dirigada para personas entre 24 y 70 años.
+El mapa contará con varios colores identificadores de acuerdo al nivel de seguridad. Por ejemplo: calles de color verde, sitios seguros y calles de color rojo sitios inseguros, ambar: zonas intermedias.
+
+
+

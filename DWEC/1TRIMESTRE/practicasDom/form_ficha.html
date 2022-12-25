@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM FICHA</title>
+    <style>
+      * {
+        background-color: #44475a;
+        color: #f8f8f2;
+      }
+      .login {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login">
+      <form action="">
+        <br />
+        <h1>LOGIN</h1>
+        <br />
+        <label for="password"><strong>CONTRASEÑA</strong></label
+        ><br />
+        <input type="text" id="claveUno" placeholder="Escribe tu contraseña..." />
+        <br />
+        <br />
+        <input type="text" id="claveDos" placeholder="Repite tu contraseña..." />
+        <p id="resultado"></p>
+        <label for="name"><strong>NOMBRE Y APELLIDOS</strong></label
+        ><br />
+        <input type="text" name="name" id="nombre" placeholder="John Doe" />
+        <br />
+        <br />
+        <label for="username"><strong>USUARIO</strong></label>
+        <br />
+        <input type="text" name="username" id="username" placeholder="Usuario" />
+        <br />
+        <br />
+        <label for="empCar"><strong>EMPRESA / CARGO</strong></label>
+        <br />
+        <input type="text" name="empCar" id="empCar" placeholder="Empresa / Cargo" />
+        <br />
+        <br />
+        <label for="color"><strong>COLOR / RGB</strong></label>
+        <br />
+        <input type="text" name="color" id="colorUno" placeholder="Color 1" />
+        <input type="text" name="color" id="colorDos" placeholder="Color 2" />
+        <input type="text" name="color" id="colorTres" placeholder="Color 3" />
+        <br />
+        <br />
+        <button id="boton" class="btn btn-primary">VALIDAR</button>
+        <br />
+        <br />
+        <div id="ficha">
+          <hr />
+        </div>
+      </form>
+    </div>
+    <script>
+      var boton = document.getElementById("boton");
+      boton.addEventListener("click", function () {
+        var claveUno = document.getElementById("claveUno").value;
+        var claveDos = document.getElementById("claveDos").value;
+        var nombre = document.getElementById("nombre").value;
+        var username = document.getElementById("username").value;
+        var empCar = document.getElementById("empCar").value;
+        // LOS COLORES DIRECTAMENTE LOS PASAMOS A INT para no volver a crear variables.
+        var colorUno = parseInt(document.getElementById("colorUno").value);
+        var colorDos = parseInt(document.getElementById("colorDos").value);
+        var colorTres = parseInt(document.getElementById("colorTres").value);
+        var boton = document.getElementById("boton");
+
+        // Convertimos a Int el String de cada input.
+        /*var numCol1 = parseInt(colorUno);
+        var numCol2 = parseInt(colorDos);
+        var numCol3 = parseInt(colorTres);*/
+
+        console.info(claveUno);
+        console.info(claveDos);
+        console.info(nombre);
+        console.info(username);
+        console.info(empCar);
+        console.info(colorUno);
+        console.info(colorDos);
+        console.info(colorTres);
+
+        // LLAMADO A FUNCIONES
+        // FUNCIONES CONTRASEÑA
+        /*Tengo un error con el console.info, cuando le doy a Validar, no me lee el primer input de la clave,
+        solo lee el segundo input. A veces sí que lee el primero, es aleatorio.*/
+        validarIgualdad(claveUno, claveDos);
+        validarClaveVacia(claveUno, claveDos);
+        validarClaveCaracteres(claveUno, claveDos);
+
+        // FUNCIONES NOMBRE
+        //validarNombreLong(nombre);
+        //validarNombreLetras(nombre);
+        nombreLongLetras(nombre);
+
+        // FUNCIONES USUARIO
+        validarUsuario(username); //////////////////////////////////////////
+        // FUNCIONES EMPRESA/CARGO
+        validarEmpCar(empCar);
+        // FUNCIONES COLOR
+        validarColor(colorUno, colorDos, colorTres);
+      });
+
+      // FICHA FORMULARIO
+      boton.addEventListener("click", function () {
+        // ficha formulario
+        var div_ficha= document.querySelector("#ficha");
+        //var ficha = document.getElementById("ficha");
+        //var add_div = document.createElement("div");
+        var add_p_nombre = document.createElement("p");
+        var add_p_empresa = document.createElement("p");
+        var add_p_usuario = document.createElement("p");
+        var add_imagen = document.createElement("img");
+        add_imagen.src = "./ojo.jpg";
+
+        add_p_nombre.innerHTML = nombre.value;
+        add_p_empresa.innerHTML = empCar.value;
+        add_p_usuario.innerHTML = username.value;
+        add_imagen.innerText;
+        // FICHA FORMULARIO
+        div_ficha.appendChild(add_p_nombre);
+        div_ficha.appendChild(add_p_usuario);
+        div_ficha.appendChild(add_p_empresa);
+        div_ficha.appendChild(add_imagen);
+        
+      });
+      // PROBARLO EN OTRO LISTENERS
+    </script>
+    <script src="./js/validarForm.js"></script>
+  </body>
+</html>

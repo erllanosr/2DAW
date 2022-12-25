@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TIEMPO</title>
+  </head>
+  <body>
+    <p id="fecha"></p>
+    <input type="button" id="stop" value="stop" onclick="parar()" />
+    <input type="button" id="start" value="start" onclick="iniciar()" />
+
+    <script>
+      var fecha = document.getElementById("fecha");
+
+      var tiempo = setInterval(function () {
+        fecha.innerHTML = Date();
+      });
+
+      function parar() {
+        clearInterval(tiempo);
+      }
+
+      function iniciar() {
+        tiempo = setInterval(function () {
+          fecha.innerHTML = Date();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

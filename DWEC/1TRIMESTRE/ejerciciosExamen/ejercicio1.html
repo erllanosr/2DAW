@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO 1 | EXAMEN</title>
+  </head>
+  <body>
+    <h1>Teclea</h1>
+    <input type="text" id="precio" placeholder="Precio" onclick="mostrar(precio,dto)"/>
+    <br />
+    <br />
+    <input type="text" id="descuento" placeholder="Descuento" onclick="mostrar(precio,dto)" />
+    <h2 id="resultado"></h2>
+    <!--Precio x Dto, 3 decimales-->
+
+    <script>
+      var precio = parseFloat(document.getElementById("precio").value);
+      var dto = parseFloat(document.getElementById("descuento").value);
+      var resul = document.getElementById("resultado");
+      var precio_final = precio - (precio * dto) / 100;
+
+      console.log(precio);
+      console.log(dto);
+      console.log(precio_final);
+
+      function calcularDto(precio, dto) {
+        precio_final;
+        resul.innerHTML = precio_final;
+      }
+      calcularDto(precio, dto);
+
+      function mostrar(precio,dto) {
+        resul.addEventListener("keyup", function(){
+          precio.innerHTML = precio;
+        })
+      }
+    </script>
+  </body>
+</html>

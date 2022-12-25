@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRACTICA 04/10</title>
+  </head>
+  <body>
+    <script>
+      var edad = 18;
+      var nombre = "pepe";
+
+      if (nombre == "pepe") {
+        console.log("SON IGUALES");
+      }
+
+      var numero = "2";
+      switch (numero) {
+        case "1":
+          console.info("numero 1");
+          break;
+        case "2":
+          console.info("numero 2");
+        default:
+          console.info("Otro número");
+          break;
+      }
+
+      var miSql = " hola%;DROP...";
+
+      if (miSql.includes(";")) {
+        console.error("ktal");
+      }
+      console.info(miSql.indexOf(';'));
+      miSql = miSql.trim();
+
+
+
+    </script>
+  </body>
+</html>

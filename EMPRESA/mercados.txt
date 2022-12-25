@@ -1,0 +1,13 @@
+Qué es Mercado: Es un medio donde se venden y se compran cosas.
+Oferta y demanda.
+Cuota de mercado: lo que ocupo en el mercado.
+Tamaño de mercado: El total de las ventas de un mercado.
+Mercado objetivo: A quién va dirigido mi producto/negocio/empresa/estrategias. Los que me compran.
+Mercado potencial / Nicho de mercado: Mercado que puede ser emergente. No son mi target pero pueden llegar a serlo.
+Estructura de Mercado 
+{
+-Fabricantes de bienes y prestadores de servicios.
+-Intermediarios o canales de distribución: Web, servidor.
+-Prescriptores: Gente especializada o no en un sector que opina de mi negocio influenciando a los demás.
+-Compradores:
+}

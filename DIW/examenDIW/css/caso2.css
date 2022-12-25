@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 20% 80% 20%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "header header header "
+    "main main main"
+    "footer footer aside";
+  text-align: center;
+}
+
+/*HEADER*/
+.header {
+  grid-area: header;
+  background: orangered;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #282a36;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  display: flex;
+  padding: 40px;
+}
+
+ul li {
+  padding-right: 40px;
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  font-size: 20px;
+}
+
+.ropa {
+  position: relative;
+}
+
+.desplegable {
+  position: absolute;
+  display: none;
+}
+
+.desplegable li {
+  text-align: center;
+  padding: 10px;
+  background-color: orange;
+  border-radius: 10px;
+}
+
+.desplegable li:hover {
+  background-color: orangered;
+  border-radius: 10px;
+}
+
+.ropa:hover .desplegable {
+  display: block;
+}
+
+.logo {
+  color: #fff;
+  font-size: 40px;
+  padding-left: 40px;
+}
+
+/*HEADER*/
+
+/*MAIN*/
+.main {
+  grid-area: main;
+  text-align: center;
+}
+
+.iz_arriba {
+  /*ZAPATILLAS*/
+  float: left;
+  width: 50%;
+  background-color: grey;
+  height: 350px;
+}
+
+.iz_abajo {
+  /*RELOJES*/
+  background-color: #fff;
+  float: left;
+  width: 50%;
+  height: 350px;
+}
+
+.de_arriba {
+  /*CAMISETAS*/
+  background-color: lightgray;
+  float: left;
+  width: 50%;
+  height: 350px;
+}
+
+.de_abajo {
+  /*CALCETINES*/
+  background-color: orangered;
+  float: left;
+  width: 50%;
+  height: 350px;
+}
+
+.contacto {
+  padding-top: 0;
+  background-color: #fff;
+  width: 50%;
+  height: 160px;
+  float: right;
+  display: flex;
+}
+
+/*MAIN*/
+.footer {
+  display: flex;
+  grid-area: footer;
+  background-color: lightgray;
+  height: 160px;
+  float: left;
+  width: 50%;
+}

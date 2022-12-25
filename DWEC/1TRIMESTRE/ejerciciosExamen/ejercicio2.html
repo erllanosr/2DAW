@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO 2</title>
+  </head>
+  <body>
+    <label for="numero">Teclea un número:</label>
+    <input type="text" id="numero" />
+    <button type="submit" id="button">GENERAR</button>
+    <div id="botones"></div>
+    <script>
+      var boton = document.getElementById("button");
+      var num = parseInt(document.getElementById("numero").value);
+      var div_botones = document.querySelector("#botones");
+      
+
+      
+
+      function generarBotones(num) {
+        var num = parseInt(document.getElementById("numero").value);
+        var add_boton = document.createElement("button");
+        var addbtn = div_botones.appendChild(add_boton);
+        var contador = 0;
+        do {
+          boton.addEventListener("click", function () {
+            var boton = document.getElementById("button");
+            console.log(num);
+          });
+          
+        } while (num != 0);
+      }
+      generarBotones(num);
+    </script>
+  </body>
+</html>

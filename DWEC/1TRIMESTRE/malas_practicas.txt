@@ -1,0 +1,10 @@
+MALAS PRÁCTICAS
+
+VARIABLES SIEMPRE A LA IZQUIERDA --> DATO < 1
+- if (dato > i)
+	condicion
+- if(dato > 1 )
+{
+	lksjdlksajadsa
+}
+-

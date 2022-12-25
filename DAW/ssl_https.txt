@@ -1,0 +1,3 @@
+SSL Y HTTPS
+TLS es una versión actualizada de SSL.
+HTTPS: Protocolo seguro de trasnferencia de hipertexto, aparece en la dirección URL cuando un sitio web está protegido por un certificado SSL.

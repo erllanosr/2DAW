@@ -1,0 +1,5 @@
+Referencias en jquery, etiqueta, clase, etiqueta concreta, todos los elementos del DOM.
+-> Todas las etiquetas del dom ---> $("*")
+--> Clase: $(".clase");
+--> id: $("#id");
+--> div: $("div");

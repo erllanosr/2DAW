@@ -1,0 +1,42 @@
+PUBLICA MIA
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIbxE4L2lZsqLsaQpZg1SLp35i5w4hWN5M6sGnQ+CpIjX1yQDHrOJ9aQZe/kuLPD/lR9gt1ulMNFabRx/1uuCvUCAwEAAQ==
+
+PRIVADA
+MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAhvETgvaVmyouxpClmDVIunfmLnDiFY3kzqwadD4KkiNfXJAMes4n1pBl7+S4s8P+VH2C3W6Uw0VptHH/W64K9QIDAQABAkApz/tewi9bM/foeRuGjUQq20oMq9eyHBSA4Z0U1cCKxU3vLIuSI72ZnP/tFJR+cAQGW+yu3XYD5d3H+AdWdKUhAiEAvBr0XZtbpdfpOyzWID0ns/SteU0iJoPFShWZ2IP2/4kCIQC3pcX0tEQhvV54oZfPWgzmAl+8+10ZEvaXO6I3oN1JDQIhAJFeJ1Eb2eS9ihHgIY6ClGc/BL0EfgrTtKj/Loij20M5AiA9iUazoFPUGmg1c7AywrHfwJvj7zZa2IfYVRseGMENYQIhAIToknyGbEpLmulh5MVJj0GgxDlWYNY3CJKFTXtZL4vV
+
+PUBLICA MAMBLONA
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMFHhlce3KydBx6kJeBxD0DqRriuJR25QBeF8R/JEOlnoSua108BBycvyFfTauOAqlCgRIUdBexpnYh7t4OOOocCAwEAAQ==
+
+MAMBLONA LO HA ENCRIPTADO CON MI CLAVE PUBLICA
+Q0o3hhUQT1vuEeZdt1evZQRpwXdRu1ZPB4gwn5qN77rz0yMesxE2Lw1HFc68f71fUDt1fzyahCgk/4UG/wjRBQ==
+
+
+MI HASH
+b0c65f8a9f75ee180c15e0265495204a
+
+HASH MAMBLONA CODIFICADO (FIRMA DIGITAL PARA ESTE DOCUMENTO)
+WIpTR0JDKDC0TrtyegGdVzX32jlf1jAj2TxX+ezyStCTmDhmJG3f2GnwbtlXXXgOJLNAprCAGtUuoXmoeN00dA==
+
+//-------------------------------------------------------------------------------------------------
+
+MENSAJE EN CLARO MAMBLONA -> externocleidomastoideo 
+
+1.- El hace un mensaje
+2.- Genera un hash
+3.- Codifica el hash (Firma digital para este proceso)
+
+4.- Yo con el mensaje en claro genero un hash
+5.- Descodifico su firma digital con su clave publica
+6.- El resultado es el mismo hash del mensaje en claro (El que genera en el paso 2)
+
+-------------------------------------------------------------------------------------
+
+Si el proceso es al reves:
+
+1.- Hago un mensaje
+2.- Genero un hash de ese mensaje
+3.- Lo codifico con mi clave privada (Firma digital para este proceso)
+4.- El descodifica mi firma digital con mi clave publica
+5.- El resultado suyo es mi hash del paso 2
+
+

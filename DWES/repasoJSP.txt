@@ -1,0 +1,23 @@
+MVC --> REPARTE TROZOS DE MI PROGRAMA
+MODELO: Base de datos. 
+VISTA: Relacionada con el controlador. SIEMPRE A INDEX.JSP (HTML + JAVA)
+CONTROLADOR --> servlet: cambiar de vista
+
+Para cambiar de vistas, mandar datos por URL por variable.
+ejemplo: ____?UsuariosController&____
+
+action =  "         " -->index o edit o update o create a través del switch
+action --> getParametter("action");
+El servlet recoge el parámetro action,
+
+VER DATOS USUARIOS: DOGET
+MODIFICAR: DOPOST
+
+INDEX --> Muestra todos
+CREATE --> Vista para crear objetos
+edit --> Vista para editar objetos
+update --> POST actualiza los datos del edit
+delete --> POST/GET --> elimina el objeto
+
+EL DAO ES EL QUE SE COMUNICA CON LA BBDD
+

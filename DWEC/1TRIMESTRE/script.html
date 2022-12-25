@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCRIPT MALA PRÁCTICA</title>
+  </head>
+  <body style="background-color: rgb(188, 194, 194)">
+    <script type="text/javascript">
+      const VALOR = 11;
+      /*
+          alert(mensaje)
+          alert(saludo)
+          alert(VALOR)
+          */
+
+      const SALUDOLOCAL = "que pasa"; //local
+      console.info(SALUDOLOCAL);
+      //console.info(SALUDOLOCAL)
+      var mensajeFuncion;
+      var mensaje = "Hola Mundo"; //global se usa en cualquier parte del código
+      let saludo = "holaaaa!!"; // no se puede usar hasta despues de la declaración
+
+      mostrar();
+
+      function mostrar() {
+        mensajeFuncion = "poca cosaaa"; //local
+      }
+
+      console.log(mensaje);
+      console.log(saludo);
+
+      console.info(mensajeFuncion);
+
+      //ojo que es constante
+      //valor = 13
+      //console.info(valorLet)
+      let valorLet = "cosa let";
+      console.info(valorLet);
+
+      console.info(valorVar);
+      var valorVar = "cosa var";
+      console.info(valorVar);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRÁCTICAS DOM</title>
+    <style>
+      body {
+        background-color: #d7d5c9;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="formulario">
+      <label for="pregunta">¿Te gusta ver películas?</label> <br />
+      <input type="radio" name="pregunta" id="si" />
+      <label for="pregunta">Sí</label> <br />
+      <input type="radio" name="pregunta" id="no" />
+      <label for="pregunta">No</label><br />
+      <input type="radio" name="pregunta" id="otro" />
+      <label for="pregunta">Otro</label>
+    </form>
+    <script>
+      var opc_1 = document.getElementById("si");
+      var opc_2 = document.getElementById("no");
+      var opc_3 = document.getElementById("otro");
+      var input = document.createElement("input"); // CREAR EL INPUT
+      var opc_3_elemento = document.querySelector("#formulario"); // SELECCIONAR DONDE VAMOS A CREAR EL INPUT
+
+      opc_3.addEventListener("click", function () {
+        if (otro.checked) {
+          console.log("está pulsado");
+          opc_3_elemento.appendChild(input); // CREA EL INPUT DEPENDIENDO EL SELECTOR QUE LE DIMOS EN EL QUERYSELECTOR.
+        }
+      });
+    </script>
+  </body>
+</html>

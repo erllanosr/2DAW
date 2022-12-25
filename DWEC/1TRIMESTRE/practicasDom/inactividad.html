@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INACTIVIDAD</title>
+  </head>
+  <body>
+    <h1>LKASD</h1>
+    <p id="fecha"></p>
+    <p id="horas"></p>
+    <p id="minutos"></p>
+    <p id="milisegundos"></p>
+    <input type="button" id="stop" value="STOP" onclick="parar()" />
+    <input type="button" id="start" value="START" onclick="iniciar()" />
+
+    <script>
+      /*var fechaHoy = new Date();
+      console.log(fechaHoy.getHours());
+      console.log(fechaHoy.getMinutes());
+      console.log(fechaHoy.getSeconds());
+
+      var fecha = document.getElementById("fecha");
+      //var horas = document.getElementById("horas");
+      //var minutos = document.getElementById("minutos");
+
+      var tiempo = setInterval(function () {
+        // ver fecha y hora en tiempo real.
+        fecha.innerHTML = Date();
+        //horas.innerHTML = fechaHoy.getHours();
+        //minutos.innerHTML = fechaHoy.getMinutes();
+      });
+
+      function parar() {
+        clearInterval(tiempo);
+      }
+
+      function iniciar() {
+        tiempo = setInterval(function () {
+          fecha.innerHTML = Date();
+        }, 1000);
+      }*/
+      function redirigir() {
+        window.location = "https://www.google.com";
+      }
+      var tiempo = setTimeout(redirigir, 60000);
+      document.addEventListener("mousemove", function () {
+        clearTimeout(tiempo);
+        tiempo = setTimeout(redirigir, 60000);
+      });
+    </script>
+  </body>
+</html>

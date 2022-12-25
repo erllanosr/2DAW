@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link id="estilos" rel="stylesheet" href="dia.css" />
+  </head>
+  <body>
+    <p>Modo: <input type="button" id="boton" value="Noche" onclick="modo('noche')" /></p>
+    <p>Modo: <input type="button" id="boton" value="Día" onclick="modo('dia')" /></p>
+
+    <script>
+      var hoy = new Date();
+      console.log("La hora es: " + hoy.getHours());
+      console.info(hoy);
+      var horaNoche = 20;
+      var horaActual = hoy.getHours();
+      var horaActual = 20;
+      function modo(tipo) {
+        console.info(tipo);
+        if (horaActual <= 8 || horaActual >= 20) {
+          document.getElementById("estilos").href = "noche.css";
+        } else {
+          document.getElementById("estilos").href = "dia.css";
+        }
+      }
+      modo();
+    </script>
+  </body>
+</html>

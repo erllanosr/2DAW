@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      border: 1px solid;
+    }
+    #contenedor {
+      display: grid;
+      /*FILAS Y COLUMNAS*/
+      /*10 columnas del mismo tamaño 10, auto*/
+      grid-template-columns: repeat(10, auto);
+      /*12 filas del mismo tamaño 12, auto*/
+      grid-template-rows: repeat(12, auto);
+      grid-gap: 20px;
+    }
+
+    #header { 
+      /*span: ocupar*/
+      background-color: blue;
+      grid-column: span 10; /*Ocupa las 10 columnas pero solo 2 filas*/
+      grid-row: span 2;
+    }
+    #nav {
+      background-color: blueviolet;
+      grid-column: span 10;
+      grid-row: span 4;
+    }
+
+    #contenido {
+      background-color: aqua;
+      grid-column: span 10;
+      grid-row: span 10;
+    }
+
+    #pie {
+      background-color: chartreuse;
+      grid-column: span 10;
+      grid-row: span 10;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div id="contenedor">
+    <div id="header">
+      Cabecera
+    </div>
+    <div id="nav">Navegación</div>
+    <div id="contenido">
+      Contenido Principal
+    </div>
+    <div id="pie">
+      Pie de página
+    </div>
+  </div>
+</body>
+</html>

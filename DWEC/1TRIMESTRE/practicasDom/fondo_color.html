@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAMBIAR EL COLOR DEL FONDO</title>
+</head>
+<body>
+  <div>
+  </div>
+  <script>
+    var cambiar_color = document.getElementById("cambiar_color");
+    var div_color = document.getElementById("cuerpo");
+    var randomColor = Math.floor(Math.random() * 150000).toString(15);
+    document.body.style.backgroundColor = "#" + randomColor;
+    var fecha = setInterval(function(){
+      console.log(Date());
+    }, 1000);
+  </script>
+</body>
+</html>

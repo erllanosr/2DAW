@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <title>VALIDAR</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <h1>VALIDAR</h1>
+        <form>
+          <div class="mb-3">
+            <input id="texto1" type="text" class="form-control" id="exampleInputEmail1" placeholder="Texto 1" />
+          </div>
+          <div class="mb-3">
+            <input id="texto2" type="text" class="form-control" placeholder="Texto 2" />
+          </div>
+          <button id="boton" type="submit" class="btn btn-outline-primary">Enviar</button>
+        </form>
+        <p id="resultado"></p>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <!--JAVASCRIPT-->
+    <!-- INNER HTML-->
+    <script>
+      /*var resultado = document.getElementById("resultado");
+      var boton = document.getElementById("boton");
+      boton.addEventListener("click", function () {
+        console.info("pika pika");
+      });
+      var texto1 = document.getElementById("texto1");
+      boton.addEventListener("click", function () {
+        console.info(texto1.value);
+      });
+
+      var texto2 = document.getElementById("texto2");
+      boton.addEventListener("click", function () {
+        console.info(texto2.value);
+      });
+
+
+
+      if (texto1.value === texto2.value) {
+        console.log("SON IGUALES");
+      } else {
+        console.log("SON DISTINTOS");
+      }*/
+      var resultado = document.getElementById("resultado");
+      var dato1 = document.getElementById('texto1');
+      var dato2 = document.getElementById("texto2");
+      var boton = document.getElementById("boton");
+
+      boton.addEventListener("click", function () {;
+      validar(dato1, dato2);
+      function validar(dato1, dato2) {
+        if (dato1.value == dato2.value) {
+          resultado.innerText = "SON IGUALES";
+        } else {
+          resultado.innerHTML = "SON DIFERENTES";
+        }
+      }
+      });
+    </script>
+  </body>
+</html>

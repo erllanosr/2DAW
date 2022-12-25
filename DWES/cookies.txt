@@ -1,0 +1,6 @@
+COOKIES
+-newCookie(----, ----);
+- setMaxAge int s <-- Segundos, 60, etc.
+-add Cookie(Cookie)
+-getCookie(Cookie) --> nombre = valor;
+scriplet es codigo java <%= 

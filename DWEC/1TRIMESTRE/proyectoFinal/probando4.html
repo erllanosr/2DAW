@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="texto">
+    <h1>MIS PREGUNTAS</h1>
+    <button id="cargaPreguntas">CARGA PREGUNTAS</button>
+  </div>
+  <table id="demo"></table>
+  <script>
+    document.ready(cargarPreguntas);
+    function cargarPreguntas() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          cargarXML(this);
+        }
+      };
+      xhr.open("GET", "preguntas.xml", true);
+      xhr.send();
+    }
+    function cargarXML(xml) {
+      var docXML = xml.responseXML;
+      var tabla = "<tr><th>PREGUNTA</th><th>RESPUESTA1</th><th>RESPUESTA2</th><th>RESPUESTA3</th><th>RESPUESTA4</th></tr>";
+      var preguntas = docXML.getElementsByTagName("PREGUNTAS"); // array de preguntas
+
+      for (var i = 0; i < preguntas.length; i++) {
+        tabla += "<tr><td>";
+        tabla += preguntas[i].getElementsByTagName("PREGUNTA_1")[0].textContent;
+        tabla += "</td><td>";
+        tabla += preguntas[i].getElementsByTagName("RESPUESTA_1_P1")[0].textContent;
+        tabla += "</td><td>";
+        tabla += preguntas[i].getElementsByTagName("RESPUESTA_2_P1")[0].textContent;
+        tabla += "</td><td>";
+        tabla += preguntas[i].getElementsByTagName("RESPUESTA_3_P1")[0].textContent;
+        tabla += "</td><td>";
+        tabla += preguntas[i].getElementsByTagName("RESPUESTA_4_P1")[0].textContent;
+        tabla += "</td></tr>";
+      }
+      document.getElementById("demo").innerHTML = tabla;
+    }
+  </script>
+</body>
+</html>

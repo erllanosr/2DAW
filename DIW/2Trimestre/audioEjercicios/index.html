@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phantom</title>
+  <link rel="icon" href="img/favicon.png" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <style>
+    body{
+      /* background-image: url(img/wallpaper.png); */
+      background-color: #F4F4F4;
+    }
+    /* .card {
+      height: 725px;
+    } */
+    .collage {
+      height: 900px;
+    }
+    #collage {
+      filter: invert(0.30);
+      filter: blur(5px);
+    }
+    #carrusel1 {
+      background-color: #3a131d;
+    }
+    #carrusel2 {
+      background-color: #853829;
+    }
+    #carrusel3 {
+      background-color: #0b100d;
+    }
+    #carrusel4 {
+      background-color: #2b1602;
+    }
+    #carrusel5{
+      background-color: #cc7e7c;
+    }
+    #navBar {
+      height: 150px;
+    }
+    /* #background_collage{
+      background-image: url(img/background_1.png);
+    } */
+  </style>
+</head>
+<!-- EMPIEZA EL HEADER -->
+    <header class="p-3 text-bg-dark" id="navBar">
+      <div class="container align-content-center pt-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="img/favicon.png" alt="" style="height: 40px;">
+          </a>
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 text-white">Phantom</a></li>
+            <li><a href="#" class="nav-link px-2 text-white"><i style="color:white" class="bi bi-vinyl text-white"></i> Álbumes</a></li>
+            <li><a href="#" class="nav-link px-2 text-white"><i class="bi bi-person-fill"></i> Artistas</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Novedades</a></li>
+            <!-- Button trigger modal -->
+            <a type="button" class="nav-link text-white px-2" data-bs-toggle="modal" data-bs-target="#miModal">
+              Sobre Nosotros
+            </a>
+            <!-- Modal -->
+            <div class="modal fade bg-black modal-dark" id="miModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg text-center">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5 text-dark" id="exampleModalLabel">¿Quiénes somos?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-dark">
+                    Somos una empresa dedicada a la comercialización de álbumes de música.
+                    <br>
+                    Nos ubicamos en: C. de Bernardino Obregón, 25, 28012 Madrid
+                    <!--Google map-->
+                    <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+                      <iframe class="pt-3"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.293821588228!2d-3.7007127842584153!3d40.40234127936682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4226329f436ff9%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1671377205502!5m2!1ses!2ses"
+                        width="650" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <!--Google Maps-->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Buscar..."
+              aria-label="Search">
+          </form>
+          <div class="text-end">
+            <button type="button" class="btn btn-dark">Iniciar Sesión</button>
+            <button type="button" class="btn btn-dark">Regístrate</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- TERMINA EL HEADER -->
+    <!-- EMPIEZA EL CARRUSEL -->
+    <div id="miCarrusel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active text-white" id="carrusel1">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/covers/blackSabbath.jpg" data-bs-toggle="modal" data-bs-target="#modal1" class="img-fluid" width="700" height="500" loading="lazy" />
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                  Paranoid - Paranoid (2009 Remastered Version) - Black Sabbath
+                </h1>
+                <span>Acerca del álbum:
+                  <br>
+                1 disco(s) - 8 pista(s) <br>
+                Duración total: 00:41:44
+                <br>
+                Artista principal: Black Sabbath <br>
+                Compositor: Various Composers <br>
+                Sello: Sanctuary Records <br>
+                Género Metal</span>
+                <br>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start pt-2">
+                  <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR AHORA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item text-white" id="carrusel2">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/covers/ledZeppellin.jpg" data-bs-toggle="modal" data-bs-target="#modal2" class="img-fluid" width="700" height="500"
+                  loading="lazy" />
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Kashmir - Mothership (Remastered) - Led Zeppelin</h1>
+                <span>
+                  Acerca del álbum <br>
+                  
+                  2 disco(s) - 24 pista(s) <br>
+                  Duración total: 02:16:24 <br>
+                  
+                  Artista principal: Led Zeppelin <br>
+                  Sello: Rhino Atlantic <br>
+                  Género Pop/Rock Rock <br>
+                </span>
+                <audio src="audio/kashmir_LedZeppelin.mp3" controls></audio>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start pt-2">
+                  <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR AHORA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item text-white" id="carrusel3">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/covers/pinkFloyd.jpg" data-bs-toggle="modal" data-bs-target="#modal3" class="img-fluid" width="700" height="500"
+                  loading="lazy" />
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                  Money (2011 Remastered Version) - Pink Floyd
+                </h1>
+                <span>
+                  Acerca del álbum <br>
+                  
+                  1 disco(s) - 10 pista(s) <br>
+                  Duración total: 00:42:48 <br>
+                  
+                  Artista principal: Pink Floyd <br>
+                  Compositor: Various Composers <br>
+                  Sello: Pink Floyd Records <br>
+                  Género Pop/Rock Rock
+                </span>
+                <br>
+                <audio src="audio/money_PinkFloyd.mp3" controls></audio>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR AHORA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item text-white" id="carrusel4">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/covers/coldplay.jpg" data-bs-toggle="modal" data-bs-target="#modal5" class="img-fluid"
+                  width="700" height="500" loading="lazy" />
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                  Parachutes
+                </h1>
+                <span>Acerca del álbum:
+                  <br>
+                  1 disco(s) - 10 pista(s)<br>
+                  Duración total: 00:41:44
+                  <br>
+                  Artista principal: Coldplay<br>
+                  Compositor: Various Composers<br>
+                  Género Pop/Rock Pop</span>
+                <br>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start pt-2">
+                  <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR AHORA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" id="carrusel5">
+          <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="img/covers/depecheMode.jpg" data-bs-toggle="modal" data-bs-target="#modal6" class="img-fluid" width="700"
+                  height="500" loading="lazy" />
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">
+                  Delta Machine (Deluxe Edition)
+                </h1>
+                <span>Acerca del álbum:
+                  <br>
+                  2 disco(s) - 17 pista(s)<br>
+                  Duración total: 01:15:11
+                  <br>
+                  Artista principal: Depeche Mode<br>
+                  Sello: Columbia<br>
+                  Género Pop/Rock</span>
+                <br>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start pt-2">
+                  <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR AHORA</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <!-- TERMINA EL CARRUSEL -->
+    <!-- EMPIEZA SEPARADOR -->
+    <div class="container text-center">
+      <div class="row pt-3 pt-5 pb-5">
+        <div class="col">
+          <h3>
+            <i class="bi bi-truck"></i>
+          </h3>
+          <p>
+            <strong>ENVÍO GRATIS A PARTIR DE 100€</strong>
+          </p>
+        </div>
+        <div class="col">
+          <h3>
+            <i class="bi bi-headset"></i>
+          </h3>
+          <p>
+            <strong>ASISTENCIA LAS 24HS</strong>
+          </p>
+        </div>
+        <div class="col">
+          <h3>
+            <i class="bi bi-arrow-repeat"></i>
+          </h3>
+          <p>
+            <strong>DEVOLUCIONES GRATUITAS</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- TERMINA SEPARADOR -->
+    <hr>
+    <!-- EMPIEZA LA GALERÍA -->
+    <div class="container-fluid pt-5">
+      <div class="row px-lg-5 pb-5">
+        <div class="col">
+          <div class="card">
+            <img src="img/covers/blackSabbath.jpg" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal1" alt="Paranoid - Black Sabbath">
+            <div class="card-body">
+              <h5 class="card-title">Paranoid - Black Sabbath</h5>
+              <div class="card-text">
+                <p class="text-muted">Publicado el 18/09/1970</p>
+                <p class="text-muted">Artista Principal: Black Sabbath</p>
+                <p class="text-muted">Género Metal</p>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+              </div>
+            </div>
+            <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+          <img src="img/covers/ledZeppellin.jpg" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal2" alt="Paranoid - Black Sabbath">
+          <div class="card-body">
+            <h5 class="card-title">Mothership - Black Sabbath</h5>
+            <div class="card-text">
+              <p class="text-muted">Publicado el 18/09/1970</p>
+              <p class="text-muted">Artista Principal: Black Sabbath</p>
+              <p class="text-muted">Género Metal</p>
+              <audio src="audio/kashmir_LedZeppelin.mp3" controls></audio>
+            </div>
+          </div>
+          <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+        </div>
+      </div>
+        <div class="col">
+          <div class="card">
+          <img src="img/covers/pinkFloyd.jpg" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal3" alt="The Dark Side Of The Moon (2011 Remastered Version)">
+          <div class="card-body">
+            <h5 class="card-title">The Dark Side Of The Moon</h5>
+            <div class="card-text">
+              <p class="text-muted">Publicado el 1/3/73</p>
+              <p class="text-muted">Artista Principal: Pink Floyd</p>
+              <p class="text-muted">Género Rock Psicodélico</p>
+              <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+            </div>
+          </div>
+          <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+        </div>
+      </div>
+        <div class="col">
+          <div class="card">
+          <img src="img/covers/theSmiths.jpg" class="card-img-top" data-bs-toggle="modal" data-bs-target="#modal4" alt="The Queen Is Dead">
+          <div class="card-body">
+            <h5 class="card-title">The Queen Is Dead</h5>
+            <div class="card-text">
+              <p class="text-muted">Publicado el 16/6/86</p>
+              <p class="text-muted">Artista Principal: The Smiths</p>
+              <p class="text-muted">Género Alternativa & Indie</p>
+              <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+            </div>
+          </div>
+          <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+        </div>
+      </div>
+      </div>
+      <div class="row px-lg-5 pb-5">
+        <div class="col">
+          <div class="card">
+            <img src="img/covers/oasis.jpg" class="card-img-top" alt="(What's The Story) Morning Glory?">
+            <div class="card-body">
+              <h5 class="card-title">(What's The Story) Morning Glory?</h5>
+              <div class="card-text">
+                <p class="text-muted">Publicado el 2/10/95</p>
+                <p class="text-muted">Artista Principal: Oasis</p>
+                <p class="text-muted">Género Alternativa & Indie</p>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+              </div>
+            </div>
+            <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/covers/theBeatles.jpg" class="card-img-top" alt="The Beatles 1962 - 1966">
+            <div class="card-body">
+              <h5 class="card-title">The Beatles 1962 - 1966</h5>
+            <div class="card-text">
+              <p class="text-muted">Publicado el 2/4/73</p>
+              <p class="text-muted">Artista principal: The Beatles</p>
+              <p class="text-muted">Género Rock</p>
+              <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+            </div>
+            </div>
+            <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/covers/radiohead.jpg" class="card-img-top" alt="Paranoid - Black Sabbath">
+            <div class="card-body">
+              <h5 class="card-title">Ok Computer</h5>
+            <div class="card-text">
+              <p class="text-muted">Publicado el 28/5/97</p>
+              <p class="text-muted">Artista Principal: Radiohead</p>
+              <p class="text-muted">Género Alternativa & Indie</p>
+              <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+            </div>
+            </div>
+            <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="img/covers/heroesdels.jpg" class="card-img-top" alt="The Platinum Collection">
+            <div class="card-body">
+              <h5 class="card-title">The Platinum Collection</h5>
+              <div class="card-text">
+                <p class="text-muted">Publicado el 20/11/06</p>
+                <p class="text-muted">Artista principal: Héroes del Silencio</p>
+                <p class="text-muted">Género Rock Pop</p>
+                <audio src="audio/paranoid_BlackSabbath.mp3" controls></audio>
+              </div>
+            </div>
+            <button type="button" class="btn btn-dark"><i class="bi bi-cart-fill text-white"></i> COMPRAR</button>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL -->
+      <div class="modal fade modal-xl bg-dark" id="modal1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/blackSabbath.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-xl bg-dark" id="modal2">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/ledZeppellin.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-xl bg-dark" id="modal3">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/pinkFloyd.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-xl bg-dark" id="modal4">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/theSmiths.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-xl bg-dark" id="modal5">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/coldplay.jpg" />
+          </div>
+        </div>
+      </div>
+      <div class="modal fade modal-xl bg-dark" id="modal6">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <img src="img/covers/depecheMode.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TERMINA LA GALERIA -->
+    <div class="container-fluid text-center bg-dark text-white" id="background_collage" >
+      <img class="collage py-3" src="img/covers/collageCovers.png" alt="collage">
+    </div>
+    <!-- FILTROS -->
+    <div class="container-fluid text-center bg-dark" id="background_collage">
+      <img id="collage" class="collage py-3" src="img/covers/collageCovers.png" alt="collage">
+    </div>
+    <!-- EMPIEZAN LOS VÍDEOS -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 pt-5">
+          <h1 class="fw-normal lh-1">
+            Paranoid - Black Sabbath
+          </h1>
+          <br>
+          <p class="lead">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis tenetur eaque, eligendi alias eveniet magni quo. Expedita laboriosam sit quis.
+          </p>
+        </div>
+        <div class="col-md-7 pt-5 pb-5">
+          <video src="video/paranoid_BlackSabbath.mp4" alt="black sabbath" controls/>
+        </div>
+      </div>
+      <hr class="featurette-divider" />
+      <div class="row pb-5 py-5">
+        <div class="col-md-7 order-md-2 py-5">
+          <h1 class="fw-normal lh-1">
+            Black Dog - Led Zeppelin
+          </h1>
+          <br>
+          <p class="lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ducimus natus impedit sit quasi beatae deleniti ex doloribus consequuntur ipsam.
+          </p>
+        </div>
+        <div class="col-md-5 pt-5">
+          <video src="video/blackDog_LedZeppelin.mp4" alt="Black Dog" controls/>
+        </div>
+      </div>
+      <!-- TERMINAN LOS VIDEOS -->
+      
+    </div>
+    <!-- EMPIEZA EL FOOTER -->
+    <div class="container.img-fluid bg-dark" style="height: auto">
+      <footer class="justify-content-between align-items-center py-5 px-5">
+        <div class="align-items-center">
+          <a href="index.html" class="text-muted text-decoration-none lh-1">
+            <img src="img/favicon.png" alt="" style="height: 40px;">
+          </a>
+          <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Phantom, Todos los derechos reservados</span>
+          <p class="text-white">Imágenes e información obtenida sobre los álbumes: <a href="https://www.qobuz.com/es-es/shop" class="text-decoration-none" target="_blank">Qobuz</a></p>
+          <p class="text-white">Audios y vídeos obtenidos: <a href="https://www.youtube.com/" class="text-decoration-none" target="_blank">YouTube</a></p>
+          <p class="text-white">Diseño: <a href="https://getbootstrap.com/" class="text-decoration-none" target="_blank">Bootstrap</a></p>
+        </div>
+      </footer>
+    </div>
+    <!-- TERMINA EL FOOTER -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+</html>

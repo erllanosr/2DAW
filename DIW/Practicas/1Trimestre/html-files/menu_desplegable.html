@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENÚ DESPLEGABLE</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      li {
+        list-style: none;
+      }
+      .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #ffddd2;
+        color: #000;
+      }
+      ul li {
+        padding-right: 40px;
+      }
+      .logo {
+        font-size: 40px;
+      }
+      .menu {
+        display: flex;
+        font-size: 20px;
+      }
+      .menu a:hover {
+        color: #ea047e;
+      }
+      .ropa {
+        position: relative;
+      }
+      .desplegable {
+        position: absolute;
+        display: none;
+      }
+      .desplegable li {
+        text-align: center;
+        padding: 10px;
+        background-color: #ffddd2;
+        border-radius: 10px;
+      }
+      .desplegable li:hover {
+        background-color: #ffacc7;
+        border-radius: 10px;
+      }
+      .ropa:hover .desplegable {
+        display: block;
+      }
+
+      @media screen and (max-width: 500px) {
+        .menu a {
+          float: none;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="header">
+        <nav class="nav_bar">
+          <div class="logo">MI LOGO</div>
+          <ul class="nav_links">
+            <div class="menu">
+              <li class="ropa">
+                <a href="#">ROPA</a>
+                <ul class="desplegable">
+                  <li><a href="#">Zapatillas</a></li>
+                  <li><a href="#">Camisetas</a></li>
+                  <li><a href="#">Relojes</a></li>
+                  <li><a href="#">Calcetines</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="#">Pie</a></li>
+            </div>
+          </ul>
+        </nav>
+      </div>
+      <div class="main"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>

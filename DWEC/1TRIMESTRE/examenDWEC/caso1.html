@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CASO 1 \ EXAMEN JS</title>
+  </head>
+  <body>
+    <div id="container">
+      <label for="name">NOMBRE</label>
+      <input type="text" name="name" id="nombre" />
+      <br />
+      <br />
+      <label for="edad">EDAD</label>
+      <input type="text" name="edad" id="edad" />
+      <div id="showBoton">
+
+      </div>
+
+      <script>
+        var nombre = document.getElementById("nombre").value;
+        var edad = parseInt(document.getElementById("edad").value);
+        var contenedor = document.getElementById("container");
+        var edadd = document.getElementById("edad");
+
+        var regexNombre = "^[a-zA-Z]{3}";
+        var regexEdad = "^[0-9][9-10]{1}$"
+        console.log(nombre);
+        console.log(edad);
+
+
+        if (nombre.match(regexNombre)!=null) {
+          console.log("REGEX BIEN");
+        } else {
+          console.log("REGEX MAL");
+        }
+
+        var edadd = document.getElementById("edad");
+        edadd.addEventListener('focusout',(event) => {
+          var div_boton = document.querySelector("#showBoton");
+          var add_boton = document.createElement("button");
+          div_boton.appendChild(add_boton);
+        })
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  #contenedor {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: repeat(12, auto);
+    grid-gap: 20px;
+  }
+
+  #header {
+    background-color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row: span 2;
+  }
+
+  #nav {
+    background-color: beige;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
+
+  #contenido {
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row: span 5;
+  }
+
+  #pie {
+    background-color: chartreuse;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 10;
+    grid-row-end: 12;
+  }
+</style>
+
+<body>
+  <div id="contenedor">
+    <div id="header">Cebecera</div>
+    <div id="nav">Navegacion</div>
+    <div id="contenido">Contenido principal</div>
+    <div id="pie">Pie</div>
+  </div>
+
+</body>
+</html>

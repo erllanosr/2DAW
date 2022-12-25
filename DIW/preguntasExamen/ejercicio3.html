@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EJERCICIO 3</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 20% 80% 20%;
+        grid-template-rows: 10% 80% 10%;
+        grid-template-areas:
+          "header header header "
+          "main main main"
+          "footer footer footer";
+        text-align: center;
+      }
+      .header {
+        background: orangered;
+        grid-area: header;
+        height: 100px;
+        justify-content: space-between;
+      }
+
+      .nav_bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #282a36;
+      }
+      ul {
+        display: flex;
+        padding: 40px;
+      }
+      ul li {
+        padding-right: 40px;
+      }
+
+      .logo {
+        font-size: 40px;
+        padding-left: 40px;
+      }
+
+      .main {
+        grid-area: main;
+      }
+      .aside {
+        grid-area: aside;
+      }
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="header">
+        <div class="nav_bar">
+          <div class="logo">TIENDA DIW CSS-PRUEBA</div>
+          <ul>
+            <li><a href="#">Zapatillas</a></li>
+            <li><a href="#">Camisetas</a></li>
+            <li><a href="#">Relojes</a></li>
+            <li><a href="#">Calcetines</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Pie</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main">MAIN</div>
+    <div class="footer">FOOTER</div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+CLIENTE -- TCP/IP  SERVIDOR
+El cliente envía un request al servidor y el servidor envía una response.
+RED PROTOCOLOS
+TCP/IP permite que hayan 65536 puertos a la vez.
+PUERTO 20 FTP
+PUERTO 25 SMFTP
+THREE TIER
+CAPA 1 --> REGISTRO
+CAPA 2 --> LOGICA
+CAPA 3 --> ACCESO A DATOS
+
