@@ -1,0 +1,10 @@
+.boton-incrementar {
+  background-color: lightsalmon;
+  width: 100px;
+  height: 50px;
+}
+.boton-reiniciar {
+  background-color: lightgreen;
+  width: 100px;
+  height: 50px;
+}
