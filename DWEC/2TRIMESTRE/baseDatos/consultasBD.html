@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script type="text/javascript">
       // Si se crea el nombre de la base de datos, el nombre de la tabla se ha creado en otro webSQL anteriormente, entonces se hará referencia directa al contenido de los datos y no se creará ninguna nueva.
+
       // Establecer nombre de la base de datos, versión, grupo de conexiones, tamaño
       var webbd = window.openDatabase("datos.db", "1.0", null, 20000);
       // crear tabla
@@ -20,6 +21,7 @@
       });
 
       // Agregar, eliminar y modificar el formato webbd.executeSql ("instrucción sql", [parámetro])
+
       // Insertar datos
       function insertar() {
         webbd.transaction(function (tr) {
@@ -27,6 +29,7 @@
           tr.executeSql("insert into usuarios (nombre, clave) values (?,?)", ["pepe", "123456"]);
         });
       }
+
       // Eliminar la base de datos
       function borrarDatos() {
         webbd.transaction(function (tr) {
@@ -40,6 +43,7 @@
           tr.executeSql("update usuarios set nombre=?,clave=? where _id=?", [nuevoNombre, nuevaClave, id]);
         });
       }
+
       // Consultar datos
       function consultar() {
         webbd.transaction(function (tr) {
@@ -69,8 +73,8 @@
         <label for="clave">Clave</label>
         <input type="text" name="clave" class="form-control" />
         <br />
-        <input type="radio" name="baseDatos" value="webSQL" />WEBSQL
-        <input type="radio" name="baseDatos" value="indexedDB" />INDEXEDDB
+        <input type="radio" name="baseDatos" value="websql" />WEBSQL
+        <input type="radio" name="baseDatos" value="indexeddb" />INDEXEDDB
       </form>
 
       <button class="btn btn-primary" onclick="insertar()">Insertar datos</button>

@@ -1,0 +1,427 @@
+CREATE TABLE personas(
+   idpersona NUMBER(9),
+   nombre VARCHAR2(100),
+   localidad VARCHAR2(300),
+   edad NUMBER(9)
+);
+
+CREATE TABLE personasNombres(
+   idpersona NUMBER(9),
+   nombre VARCHAR2(100),
+   apellido VARCHAR2(100)
+);
+
+CREATE TABLE personasNombresApellidos(
+   idpersona NUMBER(9),
+   nombreApellido VARCHAR2(200)
+);
+
+
+
+INSERT INTO personas (idpersona, nombre, localidad, edad) VALUES (1, 'pepe', 'TOLEDO', 23)
+INSERT INTO personas (idpersona, nombre, localidad, edad) VALUES (2, 'lola','MADRID', 23)
+INSERT INTO personas (idpersona, nombre, localidad, edad) VALUES (3, 'maria','SEGOVIA', 23)
+
+
+
+SET SERVEROUTPUT ON;
+
+DECLARE
+	numero number(4):=100;
+	numero2 number(4):=200;
+	resultado number(4);
+BEGIN
+	resultado:=numero + numero2;
+	dbms_output.put_line(resultado);
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+
+
+-----------------
+DECLARE
+    Valor number(4,2):=10.22;
+    Producto varchar(50):='Hola Mundo';
+    Fecha Date:=SYSDATE;
+    StockMinimo constant number:=10;
+BEGIN
+    dbms_output.put_line(Valor);
+    dbms_output.put_line(Producto);
+    dbms_output.put_line(Fecha);
+    dbms_output.put_line(StockMinimo);
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+------------------
+DECLARE
+    Valor number(4):=0;
+   
+BEGIN
+    select count(*) into Valor from personas; 
+    dbms_output.put_line(Valor);
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+------------------
+
+VER: https://campusformacionprofesional.imf.com/general/prt/prg/leccgen/newud.php?codcurso=C8088DAM&unidad=8&trozo=5&param=contenido
+
+------------------
+
+
+
+VER: https://campusformacionprofesional.imf.com/general/prt/prg/leccgen/newud.php?codcurso=C8088DAW&unidad=8&trozo=10&param=contenido
+
+-------------------
+
+-----CONDICIONALES---
+
+DECLARE
+  i number(8) := 1;
+BEGIN
+	IF i=1 THEN
+		DBMS_OUTPUT.PUT_LINE(i);
+	ELSIF i=2 THEN
+		DBMS_OUTPUT.PUT_LINE(i);
+	ELSE
+		DBMS_OUTPUT.PUT_LINE(i);
+	END IF;
+END;
+
+DECLARE
+  i number(8) := 1;
+BEGIN
+	IF i>=1 AND i<10 THEN
+		DBMS_OUTPUT.PUT_LINE(i);
+	
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('NO');
+	END IF;
+END;
+
+-----SWITCH-------
+
+DECLARE
+  i number(8) := 1;
+BEGIN
+	CASE i
+	WHEN 1 THEN
+		DBMS_OUTPUT.PUT_LINE(i);
+	WHEN 2 THEN
+		DBMS_OUTPUT.PUT_LINE(i);
+	ELSE
+		DBMS_OUTPUT.PUT_LINE(i);
+	END CASE;
+END;
+
+-----BUCLES--------
+
+DECLARE
+  i number(8) := 1;
+BEGIN
+   DBMS_OUTPUT.PUT_LINE(i);
+  WHILE I<10 LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+    i := i+1;
+  END LOOP;
+END
+
+DECLARE
+  i number(8) := 1;
+BEGIN
+   DBMS_OUTPUT.PUT_LINE(i);
+  LOOP
+    DBMS_OUTPUT.PUT_LINE(i);
+    i := i+1;
+    EXIT WHEN I>10;
+  END LOOP;
+END;
+
+----EXCEPCIONES-------------
+
+DECLARE
+	NO_VALE EXCEPTION;
+	i number(8) := 1;
+BEGIN
+	IF i<0 OR I>10 THEN
+		RAISE NO_VALE;
+	ELSE
+		DBMS_OUTPUT.PUT_LINE(i);
+	END IF;
+EXCEPTION
+	WHEN NO_VALE THEN
+		DBMS_OUTPUT.PUT_LINE('NÚMERO NO VÁLIDO');
+END;
+
+
+
+/
+
+-----CURSORES IMPLÍCITOS ---- DEVUELVEN UN VALOR
+
+DECLARE
+    v_nombre personas.nombre%TYPE;
+    v_edad personas.edad%TYPE;
+BEGIN
+    select nombre,edad into v_nombre,v_edad  from personas where idpersona=1; 
+    dbms_output.put_line(v_nombre);
+    dbms_output.put_line(v_edad);
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+
+-------------------
+
+-----CURSORES EXPLÍCITOS ---- DEVUELVEN UN CONJUNTO DE REGISTROS
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM PERSONAS;
+	v_id personas.idpersona%TYPE;
+	v_nombre personas.nombre%TYPE;
+	v_localidad personas.localidad%TYPE;
+	v_edad personas.edad%TYPE;
+BEGIN
+	OPEN cPersonas;
+	LOOP
+	    FETCH cPersonas INTO v_id,v_nombre,v_localidad,v_edad;
+	    dbms_output.put_line(v_nombre);
+	    EXIT WHEN cPersonas%NOTFOUND;
+	END LOOP;
+	CLOSE cPersonas;
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+
+-------------------
+
+------PROCEDIMIENTOS----------
+CREATE OR REPLACE
+PROCEDURE ActualizaNombres(ident NUMBER, nuevoNombre VARCHAR2)
+IS
+  -- Declaracion de variables locales
+BEGIN
+    UPDATE personas
+    SET nombre = nuevoNombre
+    WHERE idpersona = ident;
+END ActualizaNombres;
+--llamada
+select * from personas;
+BEGIN
+    ActualizaNombres(1,'pepiño');
+END;
+
+-----FUNCIONES-------
+CREATE OR REPLACE FUNCTION cuadrado(nume NUMBER) RETURN NUMBER IS 
+ 
+  -- Declaracion de variables locales 
+BEGIN 
+    RETURN nume*nume; 
+END;
+
+BEGIN 
+   dbms_output.put_line(cuadrado(2));
+END;
+
+------TRIGGERS-------------
+CREATE {OR REPLACE} TRIGGER nombre_disp
+  [BEFORE|AFTER]
+  [DELETE|INSERT|UPDATE {OF columnas}] [ OR [DELETE|INSERT|UPDATE {OF columnas}]...]
+  ON tabla
+  [FOR EACH ROW [WHEN condicion disparo]]
+[DECLARE]
+  -- Declaración de variables locales
+BEGIN
+  -- Instrucciones de ejecución
+[EXCEPTION]
+  -- Instrucciones de excepción
+END;
+
+CREATE OR REPLACE TRIGGER copiar
+  AFTER
+  INSERT
+  ON personas
+  FOR EACH ROW 
+DECLARE
+  -- Declaración de variables locales
+BEGIN
+  -- Instrucciones de ejecución
+  INSERT INTO personasaux (idpersona,nombre,localidad,edad)
+  VALUES (:NEW.idpersona,:NEW.nombre,:NEW.localidad,:NEW.edad);
+
+END;
+
+------TRANSACCIONES--------------------
+DECLARE
+  importe NUMBER;
+  ctaOrigen VARCHAR2(23);
+  ctaDestino VARCHAR2(23);
+BEGIN
+  importe := 100;
+  ctaOrigen := '2530 10 2000 1234567890';
+  ctaDestino := '2532 10 2010 0987654321';
+  UPDATE CUENTAS SET SALDO = SALDO – importe WHERE CUENTA = ctaOrigen;
+  UPDATE CUENTAS SET SALDO = SALDO + importe WHERE CUENTA = ctaDestino;
+  --SAVEPOINT modificaciones;
+  INSERT INTO MOVIMIENTOS VALUES (ctaOrigen, ctaDestino, importe*(-1), SYSDATE);
+  INSERT INTO MOVIMIENTOS VALUES (ctaDestino,ctaOrigen, importe, SYSDATE);
+  COMMIT;
+EXCEPTION
+  WHEN OTHERS THEN
+  dbms_output.put_line('Error en la transaccion:'||SQLERRM);
+  dbms_output.put_line('Se deshacen las modificaciones);
+  ROLLBACK;
+  --ROLLBACK TO SAVEPOINT modificaciones;
+END;
+
+-------SIMULACRO---------------
+select * from personas where localidad='MADRID' or localidad='TOLEDO'
+------
+select avg(edad) from personas where nombre='pepe'
+-----
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM PERSONAS;
+	v_media REAL;
+	v_id personas.idpersona%TYPE;
+	v_nombre personas.nombre%TYPE;
+	v_localidad personas.localidad%TYPE;
+	v_edad personas.edad%TYPE;
+BEGIN
+    select avg(edad) into v_media from personas;
+	OPEN cPersonas;
+	LOOP
+	    FETCH cPersonas INTO v_id,v_nombre,v_localidad,v_edad;
+	    
+	    EXIT WHEN cPersonas%NOTFOUND;
+	    dbms_output.put_line(v_nombre || ' difiere en ' || (v_edad-v_media));
+	END LOOP;
+	CLOSE cPersonas;
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+-----
+
+CREATE TABLE personasALTA(
+   idpersona NUMBER(9),
+   nombre VARCHAR2(100),
+   fecha DATE
+);
+
+CREATE TABLE estadisticas(
+   fecha DATE,
+   total NUMBER
+);
+
+
+
+
+-----
+INSERT INTO personasALTA (idpersona, nombre, fecha) VALUES (1, 'pepe', TO_DATE('22/january/10'));
+
+-----
+
+
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM PERSONASALTA;
+	v_contador NUMBER(4):=0;
+	v_dia DATE:=TO_DATE('22/january/11');
+	v_id personasALTA.idpersona%TYPE;
+	v_nombre personasALTA.nombre%TYPE;
+	v_fecha personasALTA.fecha%TYPE;
+BEGIN
+	OPEN cPersonas;
+	LOOP
+	    FETCH cPersonas INTO v_id,v_nombre,v_fecha;
+	    EXIT WHEN cPersonas%NOTFOUND;
+	    dbms_output.put_line(v_nombre || ' es alta');
+	    IF(v_fecha=v_dia) THEN
+	        v_contador:=v_contador + 1;
+	    END IF;    
+	    
+	END LOOP;
+	INSERT INTO estadisticas (fecha,total) values (v_dia,v_contador);
+	CLOSE cPersonas;
+EXCEPTION
+    WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+
+--------------------
+
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM personas;
+	v_contador NUMBER(4):=0;
+	v_dia DATE:=TO_DATE('22/may/17');
+	v_id personasCopy.idpersona%TYPE;
+	v_nombre personasCopy.nombre%TYPE;
+	v_localidad personasCopy.localidad%TYPE;
+	v_edad personasCopy.edad%TYPE;
+BEGIN
+	OPEN cPersonas;
+	LOOP
+	    	FETCH cPersonas INTO v_id,v_nombre,v_localidad,v_edad;
+	    	EXIT WHEN cPersonas%NOTFOUND;
+        		IF(v_localidad = 'MADRID') THEN
+	        		v_contador:=v_contador + 1;
+	        		INSERT INTO personasCopy VALUES (v_id,v_nombre,v_localidad,v_edad);
+	    	    END IF;    
+	        END LOOP;
+	        DELETE FROM personas WHERE personas.localidad = 'Madrid';
+	    	dbms_output.put_line( 'Eliminados: ' || v_contador || ' Fecha: ' || v_dia);
+	CLOSE cPersonas;
+EXCEPTION
+    	WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+------------------
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM personasNombres;
+	v_id personasNombres.idpersona%TYPE;
+	v_nombre personasNombres.nombre%TYPE;
+	v_apellido personasNombres.apellido%TYPE;
+	v_nombreApellido VARCHAR(200);
+BEGIN
+	OPEN cPersonas;
+	LOOP
+	    	FETCH cPersonas INTO v_id,v_nombre,v_apellido;
+	    	EXIT WHEN cPersonas%NOTFOUND;
+        		v_nombreApellido:= v_nombre || ' ' || v_apellido;
+        		INSERT INTO personasNombresApellidos (idpersona,nombreApellido) VALUES (v_id, v_nombreApellido);
+	END LOOP;
+	CLOSE cPersonas;
+EXCEPTION
+    	WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;
+
+------------------------
+
+DECLARE
+	CURSOR cPersonas
+	IS
+	SELECT * FROM personas;
+	v_contador NUMBER(4):=0;
+	v_buscalocalidad VARCHAR(200):='MADRID';
+	v_idpersona personas.idpersona%TYPE;
+	v_nombre personas.nombre%TYPE;
+	v_localidad personas.localidad%TYPE;
+	v_edad personas.edad%TYPE;
+BEGIN
+	OPEN cPersonas;
+	    LOOP
+	        	FETCH cPersonas INTO v_idpersona,v_nombre,v_localidad,v_edad;
+	        	EXIT WHEN cPersonas%NOTFOUND;
+	        	IF(v_edad>=20 AND v_edad<=30 AND v_localidad!=v_buscalocalidad) THEN
+	        		v_contador:=v_contador + 1;
+	        	END IF;    
+	    END LOOP;
+	    dbms_output.put_line('Total: ' || v_contador);
+	CLOSE cPersonas;
+EXCEPTION
+    	WHEN OTHERS THEN dbms_output.put_line('ERROR');
+END;

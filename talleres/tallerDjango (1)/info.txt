@@ -1,0 +1,90 @@
+Utilizar Python
+
+1. Instalar Django
+pip install Django
+
+2. Crear proyecto Django
+django-admin startproject nombreProyecto
+
+python -m django --version              --> saber la version de django que tengo instalada
+
+3. Estructura de carpetas
+- setting.py            --> configuraciones del framework
+- urls.py               --> enlazar las peticiones con un controlador*
+- manage.py             --> fichero que sirve para comnunicarme con la consola
+
+4. Lanzar el servidor
+python manage.py runserver
+
+5. Migraciones.
+Crear la base de datos con las tablas que Django me proporciona
+python manage.py migrate
+
+6. Aplicacion
+Es una funcionalidad de mi proyecto
+python manage.py startapp libros
+
+7. Estructura de una APP
+- views.py                      --> funciones que relacionan las vistas
+- models.py                     --> funciones que relacionan los modelos
+
+8. Mostrar una vista
+- dentro de la aplicacion debe haber una carpeta llamada 'templates' con los ficheros .html
+- En la vista views.py creo funciones que lanzan esas templates 
+- En el fichero urls.py relaciono la peticion con mi vista
+
+9. Sintaxis en vistas
+{{ VARIABLE }}              --> poner el valor de una variable en la vista
+
+Para utilizar estructuras
+{% if %}{% endif %}
+{% for %}{% endfor %}
+
+10. CSS dentro de las vistas de Django
+El contenido de CSS, JS, img va dentro de una carpeta especifica.
+Se coloca la carpeta 'static' dentro de mi APP
+
+Dentro de mi fichero html necesito una sintaxis especial de Django
+1. Cargar la ubicacion de 'static'                          ---> {% load static %}
+2. Cargar el fichero correspondiente dentro de 'static'     ---> {% static 'css/style.css' %}
+
+11. Creacion de modelos 
+Vamos al fichero models.py 
+Crear una clase con los campos de mi tabla 
+
+Clase Libro 
+- Nombre            --> String  CharField
+- Numero paginas    --> Int     BigIntegerField
+
+12. Sentencias para crear migraciones y de estas migraciones, crear la tabla en mi BD
+- Para generar la migracion                     --> python manage.py makemigrations
+- ejecutar los cambios en la base de datos      --> python manage.py sqlmigrate libros 0001
+- aplicar la migracion                          --> python manage.py migrate
+
+13. Insertar e eliminar contenido de mi tabla 
+- En views.py me creo un metodo por cada elemento
+- urls.py me creo la asociacion entre peticion y metodo correspondiente
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Libro(models.Model):
+    nombre = models.CharField(max_length=255)
+    paginas = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

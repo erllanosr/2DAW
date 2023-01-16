@@ -1,0 +1,58 @@
+Utilizar Python
+
+1. Instalar Django
+pip install Django
+
+2. Crear proyecto Django
+django-admin startproject nombreProyecto
+
+python -m django --version              --> saber la version de django que tengo instalada
+
+3. Estructura de carpetas
+- setting.py            --> configuraciones del framework
+- urls.py               --> enlazar las peticiones con un controlador*
+- manage.py             --> fichero que sirve para comnunicarme con la consola
+
+4. Lanzar el servidor
+python manage.py runserver
+
+5. Migraciones.
+Crear la base de datos con las tablas que Django me proporciona
+python manage.py migrate
+
+6. Aplicacion
+Es una funcionalidad de mi proyecto
+python manage.py startapp libros
+-- Añadirlo en settings.py
+
+7. Estructura de una APP
+- views.py                      --> funciones que relacionan las vistas
+- models.py                     --> funciones que relacionan los modelos
+
+8. Mostrar una vista
+- Dentro de la aplicación debe haber una carpeta llamada 'templates' con los ficheros html
+- En la vista views.py creo funciones que lanzan las templates
+- En el fichero urls.py relaciono la petición con mi vista
+
+9. Sintaxis en vistas
+
+{{ variable}}         -> poner el valor de una variable en la vista
+- Para utilizar estructuras -> {% if %} {% end if%}, {% for %}{% endfor%}
+
+10. CSS para las vistas de Django
+- Carpetas css/js/img, van dentro de la carpeta static/ dentro mi app, en este caso 'libros/static'
+- Dentro del html, cargar la carpeta 'static/'  --> {{ load static }}
+-- Cargar el fichero correspondiente href = "{% static css/style.css%}"
+
+11. Creación de modelos
+Vamos al fichero 'models.py' y crear una clase con los campos de mi tabla.
+
+Clase libro{
+  - nombre: string (CharField)
+  - numero paginas: entero (BigIntegerField)
+}
+
+12. Sentencias para crear migraciones y de estas migraciones, crear la tabla en mi BD
+- Para gener la migración       -> python manage.py makemigrations
+- Para ejecutar los cambios en la base de datos ->python manage.py sqlmigrate libros 0001
+- Aplicar la migración ''
