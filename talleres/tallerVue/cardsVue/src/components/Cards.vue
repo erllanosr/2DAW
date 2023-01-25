@@ -2,26 +2,33 @@
 export default {
   props: {
     titulo: {
-      type: String,
+      type: String
+    },
+    pr: {
+      type: String
+    },
+    url: {
+      type: String
     }
   }
 }
 </script>
 
 <template>
-  <div class="container">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{ titulo }}</h5>
-        <img src="../assets/logo.svg" class="card-img-top">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.
-        </p>
-        <a href="#" class="btn btn-success">Leer más</a>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-img-top w-" :src="url">
+        <div class="card-body">
+          <h1 class="card-title">
+            {{ titulo }}
+          </h1>
+          <p class="card-text">
+            {{ pr }}
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
+
 </template>
-<style scoped>
-@import url('../assets/bootstrap.css');
-</style>

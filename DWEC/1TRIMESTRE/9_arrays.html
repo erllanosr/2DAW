@@ -1,67 +1,60 @@
 <html>
+  <head> </head>
 
-<head>
-
-</head>
-
-<body style="background-color: rgb(188, 194, 194);">
-
+  <body style="background-color: rgb(188, 194, 194)">
     <script>
-        //son redimensionables
-        var lista = new Array(3)
-        var datos = ['uno', 'dos', 3, 4, 'cinco', true]
+      //son redimensionables
+      var lista = new Array(3);
+      var datos = ["uno", "dos", 3, 4, "cinco", true];
 
-        lista.push(datos[1])
-        lista.push(datos[2])
-        lista.push(datos[3])
-        lista.push(datos[4])
+      lista.push(datos[1]);
+      lista.push(datos[2]);
+      lista.push(datos[3]);
+      lista.push(datos[4]);
 
-        console.log(lista)
-        console.log(lista.pop())
-        console.log(lista)
-        console.log(lista.length);
-        console.log(lista[3]);
-        console.log(lista[30]);
-        
-        var listaNumeros = new Array(10)
-        for (let i = 0; i < 10; i++) {
-            listaNumeros[i] = i+1;
-        }
-        
-        console.info(listaNumeros)
-        listaNumeros.reverse()
-        console.info(listaNumeros)
-        listaNumeros.sort()
-        console.info(listaNumeros) //orden ascii!! ver: https://www.w3schools.com/js/js_array_sort.asp
+      console.log(lista);
+      console.log(lista.pop());
+      console.log(lista);
+      console.log(lista.length);
+      console.log(lista[3]);
+      console.log(lista[30]);
 
-        function mostrar(dato) {
-            console.info('el dato es:' + dato)
-        }
-        listaNumeros.forEach(mostrar)
-        datos.forEach(mostrar)
+      var listaNumeros = new Array(10);
+      for (let i = 0; i < 10; i++) {
+        listaNumeros[i] = i + 1;
+      }
 
+      console.info(listaNumeros);
+      listaNumeros.reverse();
+      console.info(listaNumeros);
+      listaNumeros.sort();
+      console.info(listaNumeros); //orden ascii!! ver: https://www.w3schools.com/js/js_array_sort.asp
 
-        //maps: crea un nuevo array como resultado de ejecutar una funcion
-        listaNumeros = listaNumeros.map(duplicar);
+      function mostrar(dato) {
+        console.info("el dato es:" + dato);
+      }
+      listaNumeros.forEach(mostrar);
+      datos.forEach(mostrar);
 
-        function duplicar(value) {
-            return value * 2;
-        }
+      //maps: crea un nuevo array como resultado de ejecutar una funcion
+      listaNumeros = listaNumeros.map(duplicar);
 
-        console.info(listaNumeros)
+      function duplicar(value) {
+        return value * 2;
+      }
 
+      console.info(listaNumeros);
 
-        var listaNumeros2 = new Array(10)
-            //filter: crea un nuevo array como resultado de ejecutar una filtro
-        listaNumeros2 = listaNumeros.filter(filtro);
+      var listaNumeros2 = new Array(10);
+      //filter: crea un nuevo array como resultado de ejecutar una filtro
+      listaNumeros2 = listaNumeros.filter(filtro);
 
-        function filtro(value) {
-            return value > 10;
-        }
+      function filtro(value) {
+        return value > 10;
+      }
 
-        console.info(listaNumeros2)
-            //más información en: https://www.w3schools.com/js/js_array_iteration.asp
+      console.info(listaNumeros2);
+      //más información en: https://www.w3schools.com/js/js_array_iteration.asp
     </script>
-</body>
-
+  </body>
 </html>

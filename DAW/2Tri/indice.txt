@@ -1,0 +1,21 @@
+INTRODUCCIÓN
+DESCRIPCIÓN
+ANÁLISIS
+DISEÑO
+IMPLEMENTACIÓN
+RELACIÓN DEL TEMA CON LA ASIGNATURA
+CONCLUSIÓN
+BIBLIOGRAFÍA
+---
+orden escribir-> desarrollo 
+ver como implementar daw SSO / SAML (7 paginas): -portada e indice
+-introduccion: se expone el problema (media pagina)
+-descripcion: (alto nivel) elementos que entran en juego
+-analisis
+-diseño (no se hace)
+-implementacion (no se hace)
+-relacion SSO y SAML con DAW (1/2 pagina)
+-conclusiones (media pagina)
+-bibliografia pie de pagina (numero de pagina) 1 pagina protada (no cuenta como pag (nombre, nombre trabajo, fecha, imagen))
+1 pagina indice (poner titulos, referencias tabla de contenido)
+1/2 Introduccion

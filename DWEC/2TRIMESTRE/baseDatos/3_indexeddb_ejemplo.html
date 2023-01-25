@@ -28,6 +28,7 @@
 
               const store = db.createObjectStore("usuarios", {
                 keyPath: "id",
+                autoIncrement: true,
               });
               store.createIndex("nombre", "nombre", {
                 unique: false,
@@ -66,7 +67,7 @@
         console.log("lista creada");
         let usuario = {
           id: "3",
-          nombre: "pepe",
+          nombre: "tiburon3.jpg",
         };
         console.log("usuario creado");
         let request = usuarios.add(usuario); // (3)
@@ -126,7 +127,7 @@
             console.log(cursor.value.nombre);
             cursor.continue();
           } else {
-            console.log("¡No hay más registros disponibles!");
+            console.log("¡No hay más!");
           }
         };
       }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pico.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <title>Ejercicios BD</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Ejercicio BD</h1>
+      <div class="grid">
+        <div>
+          <label>Usuario</label>
+          <input type="text" id="usuario" required />
+          <label>Clave</label>
+          <input type="text" id="clave" required />
+          <div>
+            <input type="radio" id="web_radio" name="bd" />Web SQL
+            <input type="radio" id="index_radio" name="bd" /> IndexedDB
+          </div>
+        </div>
+        <div>
+          <button id="btn_insertar" onclick="insertar()">Insertar</button>
+          <button id="btn_eliminar" onclick="borrarDatos()">Eliminar Tabla</button>
+          <!-- <button id="btn_modificar" onclick="modificar()">Modificar</button> -->
+          <button id="btn_consultar" onclick="consultar()">Ver Tabla</button>
+        </div>
+      </div>
+      <div id="demo"><hr /></div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script src="web.js"></script>
+
+    <!-- <script src="indexeddb.js"></script> -->
+  </body>
+</html>

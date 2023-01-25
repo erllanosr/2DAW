@@ -1,0 +1,24 @@
+Portada {
+nombre
+nombre trabajo
+fecha
+imagen
+}
+Índice
+Introducción -> Media página
+Detalle elementos, tecnologías SSO SAML
+Análisis
+Diseño
+Implementación
+Bibliografía -> Al final
+-----
+ver como implementar daw SSO / SAML (7 paginas):
+
+-portada e indice
+-introduccion: se expone el problema (media pagina)
+-descripcion: (alto nivel) elementos que entran en juego
+-analisis
+-diseño (no se hace)
+-implementacion (no se hace)
+-conclusiones (media pagina)
+-bibliografia

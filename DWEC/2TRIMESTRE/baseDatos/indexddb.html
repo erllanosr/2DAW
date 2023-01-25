@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="ejercicioBD/pico.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>IndexedDB</h1>
+      <div class="grid">
+        <div class="row">
+          <label>Usuario</label>
+          <input type="text" id="usuario" required />
+          <label>Clave</label>
+          <input type="text" id="clave" required />
+        </div>
+        <div class="row">
+          <button onclick="insertar()">Insertar</button>
+          <button onclick="borrarDatos()">Eliminar Tabla</button>
+          <button onclick="modificar ()">Actualice los datos del No. 1</button>
+          <button onclick="consultar()">Ver Tabla</button>
+        </div>
+      </div>
+      <hr />
+      <div id="demo"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+      // https://developer.mozilla.org/es/docs/Web/API/IndexedDB_API
+      //https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/indexeddb/
+      //https://es.javascript.info/indexeddb
+
+      var user = document.getElementById("usuario");
+      var clave = document.getElementById("clave");
+      var db;
+      let openRequest = indexedDB.open("idbdwec", 3);
+      //let deleteRequest = indexedDB.deleteDatabase("idbdwec")
+
+      openRequest.onupgradeneeded = function () {
+        // se dispara si el cliente no tiene la base de datos
+        let db = openRequest.result;
+        switch (
+          event.oldVersion // versión de db existente
+        ) {
+          case 0:
+            // version 0 significa que el cliente no tiene base de datos
+            // ejecutar inicialización
+            let db = openRequest.result;
+            if (!db.objectStoreNames.contains("usuarios")) {
+              // si no hay un almacén de usuarios
+
+              const store = db.createObjectStore("usuarios", {
+                keyPath: "id",
+                autoIncrement: true,
+              });
+              store.createIndex("usuario", "usuario", {
+                unique: false,
+              });
+              store.createIndex("clave", "clave", {
+                unique: false,
+              });
+              console.info("creamos usuarios!");
+            } else {
+              console.info("tenemos usuarios!");
+            }
+          case 1:
+          // el cliente tiene la versión 1
+          // actualizar
+          //let deleteRequest = indexedDB.deleteDatabase(name)
+          //db.deleteObjectStore('usuarios')
+        }
+      };
+
+      openRequest.onerror = function () {
+        console.error("Error", openRequest.error);
+      };
+
+      openRequest.onsuccess = function () {
+        db = openRequest.result;
+        // continúa trabajando con la base de datos usando el objeto db
+        console.info("Base de datos creada con éxito¡!");
+      };
+
+      function insertar() {
+        let transaction = db.transaction("usuarios", "readwrite"); // (1)
+        console.log("conectado");
+        // obtiene un almacén de objetos para operar con él
+        let usuarios = transaction.objectStore("usuarios"); // (2)
+        console.log("lista creada");
+        let usuario = {
+          // id: "3",
+          nombre: user.value,
+          clave: clave.value,
+        };
+        console.log("usuario creado");
+        let request = usuarios.add(usuario); // (3)
+        console.log("usuario en listado");
+        request.onsuccess = function () {
+          // (4)
+          console.log("Usuario agregado", request.result);
+        };
+
+        request.onerror = function () {
+          console.log("Hay un error", request.error);
+        };
+      }
+
+      // Eliminar la base de datos
+      function borrarDatos() {
+        var request = db.transaction("usuarios", "readwrite").objectStore("usuarios").delete("2");
+        request.onsuccess = function (event) {
+          // It's gone!
+          console.info("Eliminado");
+        };
+      }
+
+      // Modificar los datos
+      function modificar() {
+        var objectStore = db.transaction("usuarios", "readwrite").objectStore("usuarios");
+        var request = objectStore.get("5");
+        request.onerror = function (event) {
+          // Handle errors!
+          console.info("Se ha producido un error!");
+        };
+        request.onsuccess = function (event) {
+          // Get the old value that we want to update
+          var data = request.result;
+
+          // update the value(s) in the object that you want to change
+          data.nombre = "jelou";
+
+          // Put this updated object back into the database.
+          var requestUpdate = objectStore.put(data);
+          requestUpdate.onerror = function (event) {
+            // Do something with the error
+            console.info("no se puede modificar");
+          };
+          requestUpdate.onsuccess = function (event) {
+            // Success - the data is updated!
+            console.info("modificado!");
+          };
+        };
+      }
+      // Consultar datos
+      function consultar() {
+        var objectStore = db.transaction("usuarios").objectStore("usuarios");
+        objectStore.openCursor().onsuccess = function (event) {
+          var cursor = event.target.result;
+          if (cursor) {
+            console.log(cursor.value.id);
+            console.log(cursor.value.nombre);
+            console.log(cursor.value.clave);
+            cursor.continue();
+          } else {
+            console.log("¡No hay más registros disponibles!");
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

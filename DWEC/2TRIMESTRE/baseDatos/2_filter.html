@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>FILTER</title>
+  </head>
+  <body style="background-color: rgb(188, 194, 194)">
+    <script>
+      let numeros = [1, 5, 23, 4, 12, 45];
+      //   var numero;
+      var longitud = numeros.length;
+      let resultado = [];
+      for (let i = 0; i < longitud; i++) {
+        numero = numeros[i];
+        if (numero > 10) {
+          resultado.push(numero);
+        }
+      }
+
+      console.log(resultado);
+
+      //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+      let resultado2 = numeros.filter((numero) => numero > 10 && numero < 20);
+      console.log(resultado2);
+    </script>
+  </body>
+</html>

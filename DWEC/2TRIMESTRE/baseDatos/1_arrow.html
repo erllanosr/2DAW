@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>Ejercicios</title>
+  </head>
+
+  <body style="background-color: rgb(188, 194, 194)">
+    <script>
+      //https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+      var lista = new Array(3);
+      var datos = ["uno", "dos", 3, 4, "cinco", true];
+      var numeros = [];
+
+      // cuántos arrays de diferente tipo existen en el array
+
+      // Separa los números
+      const numInt = datos.filter((element) => element.indexOf(2, 3) && element.indexOf(5));
+      console.log(numInt);
+
+      // Número en formato texto con más letras
+
+      const numTexto = (element) => element == "cinco";
+      console.log(datos.findIndex(numTexto).toString);
+    </script>
+  </body>
+</html>
