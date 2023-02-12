@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="ejercicioBD/pico.css" />
-    <title>Document</title>
+    <title>IndexedDB</title>
   </head>
   <body>
     <main class="container">
       <h1>IndexedDB</h1>
+      <details>
+      <summary>Para modificar...</summary>
+      <p>Para modificar un usuario, hay que escribir en los inputs los nuevos datos y luego clickar el ícono del lápiz del usuario a modificar.</p>
+    </details>
       <div class="grid">
         <div class="row">
           <label>Usuario</label>
@@ -26,7 +30,8 @@
       <div id="demo"></div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="jquery-3.6.3.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.0.js"></script> -->
     <script type="text/javascript">
       // https://developer.mozilla.org/es/docs/Web/API/IndexedDB_API
       //https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/indexeddb/
@@ -148,6 +153,9 @@
         var objectStore = db.transaction("usuarios").objectStore("usuarios");
         objectStore.openCursor().onsuccess = function (event) {
           var cursor = event.target.result;
+          let id_usuario = cursor.value.id;
+          let nombre_usuario = cursor.value.nombre;
+          let clave_usuario = cursor.value.clave;
           if (cursor) {
             console.log(cursor.value.id);
             console.log(cursor.value.nombre);

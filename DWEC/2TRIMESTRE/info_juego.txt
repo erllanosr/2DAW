@@ -1,0 +1,16 @@
+Nombre del juego: 
+	-The Last One
+
+Integrantes:
+	-Piero Toledo Nerio
+	-Erick Llanos Ríos
+
+Argumento:
+Somos grandes fanáticos de la serie Half - Life la cual tomamos como inspiración al momento de pensar en una idea para desarrollar este videojuego.
+
+Descripción del juego:
+Una empresa desarrolla monstruos accidentalmente, esta empresa ha sido la culpable de eliminar a las perosnas cercanas a Marco, el protagonista del juego. El cual quiere cobrar venganza y matar al jefe de la empresa.
+
+
+
+

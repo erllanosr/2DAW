@@ -1,0 +1,22 @@
+<div id="saludo">
+  <p>{{ saludo }}</p>
+  <div *ngFor="let c of listado; index as i">
+    <p>{{ i }}.{{ c.id }} - {{ c.nombre }}</p>
+    <p *ngIf="c.id == 1">El primero.</p>
+  </div>
+   <button (click)="cambio()" id="boton">Cambiar</button>
+</div>
+ <table style="border:1px solid">
+  <tr >
+    <th>id</th>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let c of listado; index as i">
+    <td>{{ c.id }}</td>
+    <td>{{ c.nombre }}</td>
+    <td><button>Editar</button></td>
+    <td><button (click)="borrar(i)">Eliminar</button></td>
+  </tr>
+</table>

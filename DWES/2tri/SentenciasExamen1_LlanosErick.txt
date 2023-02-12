@@ -1,0 +1,54 @@
+*** EXAMEN LARAVEL ***
+Comandos:
+- Creo el proyecto: 
+	-composer create-project laravel/laravel examenLaravel
+- Creo las tablas:
+	- php artisan make:migration create_documentos_table
+ 	- php artisan make:migration create_entregas_table
+ 	- php artisan make:migration create_grupos_table
+- Agrego las tablas a la Base de Datos:
+	- php artisan migrate
+- Creo los Seeders:
+	- php artisan make:seeder DocumentosSeeder
+ 	- php artisan make:seeder EntregasSeeder
+ 	- php artisan make:seeder GruposSeeder
+
+(He tenido problemas, con: php artisan migrate: fresh y migrate:refresh, los he solucionado)
+- Importar los datos a la Base de Datos:
+	- php artisan db:seed
+- Creo los Factory:
+	- php artisan make:factory DocumentosFactory
+ 	- php artisan make:factory EntregasFactory
+	- php artisan make:factory GruposFactory
+	- En cada archivo uso lo siguiente para generar campos aleatorios.
+	'nombre' => $this->faker->randomLetter(),
+	'vencimiento' => $this->faker->random,
+        'grupos_id' => $this->faker->randomDigit(),
+- Creo los Model
+	- php artisan make:model Documentos
+	- php artisan make:model Grupos
+	- php artisan make:model Entregas
+- Aplico los cambios y lo añado a la base de datos:
+	- php artisan db:seed
+
+
+
+
+ 	
+ 	Schema::create('entregas', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->dateTime('vencimiento');
+            $table->foreignId('grupo_id')->constrained();
+            $table->timestamps();
+        });
+        
+        
+        Schema::create('grupos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->integer('aulas_id');
+            $table->integer('cursos_id');
+            $table->integer('ciclos_id');
+            $table->timestamps();
+        });

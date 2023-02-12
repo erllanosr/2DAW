@@ -1,0 +1,7 @@
+Fechas DWES
+1. Examen -> migraciones, seeders, factory
+Inserciones con seeders,
+
+2. Práctica -> "", "", "" (MVC)
+3. Restro de trimestre
+4. Pruebaf

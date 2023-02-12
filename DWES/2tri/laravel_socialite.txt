@@ -1,0 +1,93 @@
+*** Laravel Socialite ***
+Creamos el proyecto y el paquete laravel Socialite:
+  'composer create-project laravel/laravel probandoSocialite'
+  'composer require laravel/socialite'
+  'composer require doctrine/dbal' --> opcional. Conexiones BD¿? Opcional
+  composer require laravel/ui
+  php artisan ui bootstrap --auth
+
+*Facebook require que tu proyecto sea https://... y al ejecutar 'php artisan serve' te 
+crea un http://..., por lo tanto, para Facebook hay que crear dominio local, con Apache o 
+Nginx y configuar que al ejecutar 'php artisan serve' se inicie el proyecto on https://...
+
+
+*** Ficheros por utilizar ***
+->  .env
+->  /routes/web.php
+->  /config/services.php
+->  /app/Models/User.php
+
+*** EJEMPLO GOOGLE ***
+https://console.cloud.google.com/apis/credentials
+
+- Creamos un proyecto nuevo.
+- Vamos a 'Pantalla de consentimiento' y elegimos 'Externos'.
+- Rellenamos los campos obligatorios.
+- Clickamos en el botón 'Agregar o quitar permisos'
+- Elegimos lo que queremos, en este caso, información básica del usuario: correo y avatar. Click en 'Actualizar'. Botón 'Guardar y continuar'.
+- Vamos a la pantalla de 'Credenciales' y click en 'Crear Credenciales'.
+- ID de cliente OAUTH, elegimos 'Aplicación web'.
+- En el apartado de 'URI de redireccionamiento autorizados' ponemos la url de nuestra página más la extensión hacia dónde va a redigirir cuando haga el login. En este caso de ejemplo: http://pruebas.com:8000/google-callback y 'Guardar'.
+- Para ver las claves, click en la credencial nueva y copiamos la ID de cliente y Secreto del cliente.
+
+=> Fichero /config/services.php
+- Agregamos:
+'google' => [
+    'client_id' => env('GOOGLE_CLIENT_ID'),
+    'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+    'redirect' => '/google-callback',
+],
+
+=> Fichero .env
+- Agregamos:
+--> GOOGLE_CLIENT_ID="ID de cliente" 253626390554-oustt71sbjv7051k7t05onr44afn8np1.apps.googleusercontent.com
+-->GOOGLE_CLIENT_SECRET="Secreto del cliente" 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
+
+=> Fichero /routes/web.php
+--> La ruta "/login-google" se encarga de redirigir al usuario a la página de inicio de sesión de Google.
+
+--> La ruta "/google-callback" es la dirección a la que Google redirigirá al usuario una vez que haya iniciado sesión y autorizado la aplicación. Aquí, se utiliza la función "user" de Socialite para obtener los detalles del usuario que acaba de iniciar sesión.
+
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
+
+Route::get('/login-google', function () {
+    return Socialite::driver('google')->redirect();
+});
+
+Route::get('/google-callback', function () {
+    $user = Socialite::driver('google')->user();
+});
+
+--> Ejecutamos 'php artisan serve' y en la URL, agregamos /login-google.
+Nos aparece un error, copiamos la URL del callback.
+- Vamos a la Credencial de Google y añadimos la URI.
+- Probamos el login otra vez y ya se puede Iniciar Sesión con Google.
+
+*** Guardar los datos del usuario en la BD ***
+
+- Creamos una migración para actualizar los campos en la BD:
+'php artisan make:migration UpdateUsersTable
+
+=>Fichero /database/migrations/2023_02_11_174957_update_users_table.php
+Schema::table('users', function(Blueprint $table) {
+            // Ponemos que la password pueda ser Nula en caso de que hagan login con OAuth, al igual todos los demás campos.
+            $table->string('password')->nullable()->change();
+            $table->string('avatar')->nullable();
+            $table->string('external_id')->nullable();
+            $table->string('external_auth')->nullable();
+        });
+- Ejecutamos 'php artisan migrate' y los cambios se ven reflejados en la BD.
+
+=> Fichero => /app/Models/User.php
+protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'avatar',
+        'external_id',
+        'external_auth'
+    ];
+=> Fichero /routes/web.php
