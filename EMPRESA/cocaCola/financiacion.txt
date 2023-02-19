@@ -1,0 +1,11 @@
+4.2 del PDF Recursos materiales. Inversiones. Costes fijos y variables.
+10. INVERSIONES A REALIZAR
+
+11. 4.2 Recursos materiales. Inversiones. Costes fijos y variables.
+
+DIVIDIR POR TABLAS LOS COSTES FIJOS Y VARIABLES
+AL FINAL DEL INFORME ANEXAR INFORMACIÓN EXTRA EN RELACIÓN A LOS COSTES
+Ejemplo:
+pantallazo de precio, marca y modelo de un portátil, un servidor, etc. Hacer una investigación fast
+
+Carpeta public --> public html

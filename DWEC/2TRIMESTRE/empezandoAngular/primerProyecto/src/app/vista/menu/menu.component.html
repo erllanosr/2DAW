@@ -1,13 +1,19 @@
-<div id="saludo">
+<!-- <div id="saludo">
   <p>{{ saludo }}</p>
   <div *ngFor="let c of listado; index as i">
     <p>{{ i }}.{{ c.id }} - {{ c.nombre }}</p>
     <p *ngIf="c.id == 1">El primero.</p>
   </div>
    <button (click)="cambio()" id="boton">Cambiar</button>
-</div>
- <table style="border:1px solid">
-  <tr >
+</div> -->
+
+<table style="border:1px solid">
+  <div id="buscador">
+    <!-- <input type="text"  #bindingInput> -->
+    <input matInput placeholder="Ex. Pizza" type="text" value="buscador" #bindingInput>
+    <button (click)="buscar()" id="boton">Buscar</button>
+  </div>
+  <tr>
     <th>id</th>
     <th>Nombre</th>
     <th></th>

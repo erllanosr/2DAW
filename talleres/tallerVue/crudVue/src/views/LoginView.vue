@@ -3,33 +3,52 @@
     <v-sheet width="300" class="mx-auto">
       <h1>Iniciar Sesión</h1>
       <v-form ref="form">
-        <v-text-field v-model="name" :rules="nameRules" label="Correo" required></v-text-field>
-        <v-text-field v-model="password" :rules="nameRules" label="Contraseña" required></v-text-field>
-
+        <v-text-field v-model="correo"  label="Correo" required></v-text-field>
+        <v-text-field v-model="clave" label="Contraseña" required></v-text-field>
         <div class="d-flex flex-column">
           <v-btn color="success" class="mt-4" block @click="validate, ir_home()">
             Iniciar Sesión
-          </v-btn>
-          <v-btn color="error" class="mt-4" block @click="reset">
-            Resetear Formulario
           </v-btn>
         </div>
       </v-form>
     </v-sheet>
 
   </div>
+  <div>
+    <ul v-if="posts && posts.length">
+      <li v-for="post of posts">
+        <p><strong>{{post.title}}</strong></p>
+        <p>{{post.body}}</p>
+      </li>
+    </ul>
+  
+    <ul v-if="errors && errors.length">
+      <li v-for="error of errors">
+        {{error.message}}
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
+
+import axios from 'axios';
 export default {
-  data: () => ({
-    valid: true,
-    name: '',
-    nameRules: [
-      v => !!v || 'Campos obligatorios',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters',
-    ],
-    select: null,
-  }),
+  data() {
+    return {
+      correo: '',
+      clave: '',
+      posts: [],
+      errors: []
+    };
+  },
+  async created() {
+    try {
+      const response = await axios.get(`http://jsonplaceholder.typicode.com/posts`)
+      this.posts = response.data
+    } catch (e) {
+      this.errors.push(e)
+    }
+  },
 
   methods: {
     ir_home : function () {

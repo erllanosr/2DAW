@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Datos } from 'src/app/modelo/datos';
+import { BuscadorComponent } from '../buscador/buscador.component';
+
 
 @Component({
   selector: 'app-menu', templateUrl: './menu.component.html',
@@ -7,6 +9,7 @@ import { Datos } from 'src/app/modelo/datos';
 })
 
 export class MenuComponent implements OnInit {
+  @ViewChild('bindingInput') bindingInput!: ElementRef;
   // Atributos
   public saludo: string;
   public listado: Datos[];
@@ -21,13 +24,21 @@ export class MenuComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.saludo = "esa genteeee";
+    this.saludo = "SALUDO 1";
   }
 
   public cambio(): void {
-    this.saludo = "que pasaaaa";
+    this.saludo = "SALUDO 2";
   }
   public borrar(id:number): void {
     delete this.listado[id];
+  }
+  public buscar(): void {
+    console.log('HTML attribute value: ' + this.bindingInput.nativeElement.getAttribute('value'));
+    console.log('DOM property value: ' + this.bindingInput.nativeElement.value);
+
+    if (this.bindingInput.nativeElement.value == this.listado.find(nombre)){
+      console.log("lkajsda");
+    }
   }
 }

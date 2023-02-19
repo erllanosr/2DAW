@@ -75,9 +75,9 @@ export default {
       productos: [
         {
           id: '',
-          producto: 'NOMBREEEEE',
-          descripcion: 'DESCRIPCIONN',
-          precio: 'PRECIOOOOOOO',
+          producto: 'NOMBRE',
+          descripcion: 'DESCRIPCIÓN',
+          precio: 'PRECIO',
         },
       ],
       methods: {
