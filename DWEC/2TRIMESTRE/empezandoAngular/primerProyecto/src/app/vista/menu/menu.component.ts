@@ -12,10 +12,14 @@ export class MenuComponent implements OnInit {
   @ViewChild('bindingInput') bindingInput!: ElementRef;
   // Atributos
   public saludo: string;
+  public permiso: boolean;
   public listado: Datos[];
+  public rutaImagen: string;
 
   constructor() {
     this.saludo = 'Hola mundo';
+    this.permiso = false;
+    this.rutaImagen = "https://www.nationalgeographic.com.es/medio/2022/12/12/aguila-1_405f4994_221212153716_1280x720.jpg";
     this.listado = [
       { id: 1, nombre: 'Águila' },
       { id: 2, nombre: 'Leones' },
@@ -29,6 +33,13 @@ export class MenuComponent implements OnInit {
 
   public cambio(): void {
     this.saludo = "SALUDO 2";
+    // ver longitud saludo
+    if (this.saludo.length > 3) {
+      console.log("MAYOR A 3")
+    } else {
+
+    }
+
   }
   public borrar(id:number): void {
     delete this.listado[id];
@@ -37,7 +48,7 @@ export class MenuComponent implements OnInit {
     console.log('HTML attribute value: ' + this.bindingInput.nativeElement.getAttribute('value'));
     console.log('DOM property value: ' + this.bindingInput.nativeElement.value);
 
-    if (this.bindingInput.nativeElement.value == this.listado.find(nombre)){
+    if (this.bindingInput.nativeElement.value === this.listado.find(this.bindingInput.nativeElement.value)){
       console.log("lkajsda");
     }
   }

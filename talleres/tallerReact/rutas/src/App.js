@@ -7,7 +7,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <NavLink to='/'>Página principal</NavLink>
-
         <Routes>
           <Route path='/' element={
             <h1>Probando Router</h1>
@@ -16,7 +15,6 @@ function App() {
           <Route path='*' element={
             <h2>ERROR 404</h2>
           }></Route>
-
         </Routes>
       </BrowserRouter>
     </div>

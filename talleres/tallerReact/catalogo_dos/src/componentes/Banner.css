@@ -1,0 +1,21 @@
+.banner {
+  background-image: url(../assets/images/background_1.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+}
+.banner-container {
+  text-align: center;
+  padding: 5% 0;
+}
+.banner h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: bold;
+}
+.banner p {
+  margin-left: 400px;
+  width: 700px;
+  text-align: center;
+}

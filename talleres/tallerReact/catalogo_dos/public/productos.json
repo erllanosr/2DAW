@@ -1,0 +1,50 @@
+[
+  {
+    "id":1,
+    "nombre": "The Dark Side Of The Moon",
+    "artista":"Pink Floyd",
+    "descripcion":"loremloremloremlorem",
+    "precio":20,
+    "img": "/src/assets/images/pinkFloyd.jpg"
+  },
+  {
+    "id":2,
+    "nombre": "Paranoid",
+    "artista": "Black Sabbath",
+    "descripcion":"loremloremloremlorem",
+    "precio":15,
+    "img": "/src/assets/images/blackSabbath.jpg"
+  },
+  {
+    "id":3,
+    "nombre": "Parachutes",
+    "artista": "Coldplay",
+    "descripcion":"loremloremloremlorem",
+    "precio":40,
+    "img": "/src/assets/images/coldplay.jpg"
+  },
+  {
+    "id":4,
+    "nombre": "Delta Machine",
+    "artista": "Depeche Mode",
+    "descripcion":"loremloremloremlorem",
+    "precio":25,
+    "img": "/src/assets/images/depecheMode.jpg"
+  },
+  {
+    "id":5,
+    "nombre": "(What's the Story) Morning Glory?",
+    "artista": "Oasis",
+    "descripcion":"loremloremloremlorem",
+    "precio":50,
+    "img": "/src/assets/images/oasis.jpg"
+  },
+  {
+    "id":6,
+    "nombre": "The Queen Is Dead",
+    "artista": "The Smiths",
+    "descripcion":"loremloremloremlorem",
+    "precio":22.5,
+    "img": "/src/assets/images/theSmiths.jpg"
+  }
+]

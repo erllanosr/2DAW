@@ -70,7 +70,7 @@
     </v-data-table>
   </v-container>
 </template>
-<script>
+<script lang>
 export default {
   data: () => ({
     dialog: false,
@@ -91,18 +91,17 @@ export default {
     editedIndex: -1,
     productoEditado: {
       nombre: '',
-      descripcion: 0,
+      descripcion: '',
       precio: 0,
       stock: 0,
     },
     defaultProducto: {
       nombre: '',
-      descripcion: 0,
+      descripcion: '',
       precio: 0,
       stock: 0,
     },
   }),
-
   computed: {
     tituloForm() {
       return this.editedIndex === -1 ? 'Agregar Producto' : 'Editar Producto'

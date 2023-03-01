@@ -8,23 +8,23 @@ import { Saludar } from "./Saludar";
 import { Posts } from './Posts'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// const users = [
-//   {
-//     id: 1,
-//     name: 'Michael G. Scott',
-//     image: 'https://robohash.org/user1'
-//   },
-//   {
-//     id: 2,
-//     name: 'Dwight K. Schrute',
-//     image: 'https://robohash.org/user2'
-//   },
-//   {
-//     id: 3,
-//     name: 'Jim Halpert',
-//     image: 'https://robohash.org/user3'
-//   }
-// ]
+const users = [
+  {
+    id: 1,
+    name: 'Michael G. Scott',
+    image: 'https://robohash.org/user1'
+  },
+  {
+    id: 2,
+    name: 'Dwight K. Schrute',
+    image: 'https://robohash.org/user2'
+  },
+  {
+    id: 3,
+    name: 'Jim Halpert',
+    image: 'https://robohash.org/user3'
+  }
+]
 
 // function Greeting() {
 //   const user = {
@@ -87,17 +87,15 @@ function Counter() {
 root.render(
   <>
     <Counter></Counter>
-
-
     {/* Recorrer con map */}
-    {/* {users.map((user, index) => {
+    {users.map((user, index) => {
       return (
         <div key={index}>
           <h1>{user.name}</h1>
           <img src={user.image} alt="" />
         </div>
       )
-    })} */}
+    })}
 
 
     {/* <Posts></Posts> */}

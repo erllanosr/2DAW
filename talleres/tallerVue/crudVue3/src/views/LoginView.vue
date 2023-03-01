@@ -30,13 +30,12 @@ export default {
     iniciarSesion() {
       // Array de objetos que contienen datos de usuario permitidos
       const usuarios = [
-        { correo: 'usuario1', clave: 'contraseña1' },
-        { correo: 'usuario2', clave: 'contraseña2' },
-        { correo: 'usuario3', clave: 'contraseña3' }
+        { correo: 'erick@gmail.com', clave: '123456' },
+        { correo: 'prueba@gmail.com', clave: 'clave2' },
+        { correo: 'prueba2@gmail.com', clave: 'clave3' }
       ]
 
       const usuario = usuarios.find(u => u.correo === this.correo && u.clave === this.clave)
-
       if (usuario) {
         this.ir_home()
       } else {

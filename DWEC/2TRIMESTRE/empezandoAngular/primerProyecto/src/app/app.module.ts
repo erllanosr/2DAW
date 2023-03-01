@@ -8,13 +8,16 @@ import { PublicacionComponent } from './vista/publicacion/publicacion.component'
 // import { BuscadorComponent } from './vista/buscador/buscador.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
+import { FormularioComponent } from './vista/formulario/formulario.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     PublicacionComponent,
+    FormularioComponent,
     // BuscadorComponent,
   ],
   imports: [
@@ -22,7 +25,8 @@ import { MatInputModule } from '@angular/material/input';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

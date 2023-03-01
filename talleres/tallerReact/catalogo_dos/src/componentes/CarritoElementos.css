@@ -1,0 +1,17 @@
+.carrito {
+  padding-top: 50px;
+}
+img {
+  height: 150px;
+}
+ul li {
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+}
+#total {
+  text-align: center;
+}
+table {
+  text-align: center;
+}
